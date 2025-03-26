@@ -1,0 +1,23 @@
+@use "./fonts";
+@use "./variants/default/variables";
+
+:root {
+  --owd-win95-font-family: ms-sans-serif, "sans-serif";
+
+  --owd-win95-windov-nav: 26px;
+  --owd-win95-system-bar-height: 40px;
+
+  --owd-win95-border-width: 2px;
+  --owd-win95-gap: 3px;
+
+  --owd-win95-theme-color-grey: 180, 180, 180;
+  --owd-win95-theme-color-light: 198, 198, 198;
+  --owd-win95-theme-color-white: 254, 254, 254;
+  --owd-win95-theme-color-black: 10, 10, 10;
+  --owd-win95-theme-color-dark: 132, 133, 132;
+
+  --owd-win95-sheet-background: rgb(var(--owd-win95-theme-color-light));
+  --owd-win95-sheet-color: rgb(var(--owd-win95-theme-color-black));
+  --owd-win95-sheet-border-color: rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-black)) rgb(var(--owd-win95-theme-color-black)) rgb(var(--owd-win95-theme-color-white));
+  --owd-win95-sheet-box-shadow: rgb(var(--owd-win95-theme-color-dark)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0 inset;
+}

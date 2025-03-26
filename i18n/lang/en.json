@@ -1,0 +1,9 @@
+{
+  "systemBar": {
+    "start": {
+      "button": {
+        "label": "Start"
+      }
+    }
+  }
+}
