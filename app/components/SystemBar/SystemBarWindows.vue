@@ -5,7 +5,7 @@ const systemBar = useSystemBar()
 <template>
   <div class="owd-system-bar__windows">
     <Button
-        v-for="[windowId, window] of systemBar.windows"
+        v-for="[windowId, window] of systemBar.windows.value"
         size="sb"
         system-bar
         :active="window.state.active"

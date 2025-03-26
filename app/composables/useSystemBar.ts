@@ -8,11 +8,13 @@ export function useSystemBar(_config?: SystemBarConfig | undefined) {
     const applicationManager = useApplicationManager()
     const desktopManager = useDesktopManager()
 
+    const systemLifecycle = useSystemLifecycle()
+
     const defaultTerminalApp = desktopManager.getDefaultApp('terminal')
     const defaultAuthApp = desktopManager.getDefaultApp('auth')
 
     const enabled = ref(false)
-    const windows  = applicationManager.openedWindows
+    const windows = computed(() => applicationManager.openedWindows)
 
     const menu = computed(() => {
         const systemBarMenu: any = [
@@ -65,6 +67,9 @@ export function useSystemBar(_config?: SystemBarConfig | undefined) {
             {
                 label: 'Shut Down...',
                 image: 'data:image/png;base64,AAABAAIAICAQAAEABADoAgAAJgAAABAQEAABAAQAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHiAAAAAAAAAAAAAAAAAAHd4iIAAAAAAAAAAAAAAAHd3eIiIgAAAAAAAAAAAAHd3d3iIiIiAAAAAAAAAAHd3d3f3eIiIiIAAAAAAAHd3d3f/eId4iIiAAAAAAHd3d3f/dwAIh3iIgAAACPcid3f/dwB4gAiHeIAAAAj3qnf/dwB3eIiAiIdwAAAI93f/dwB3eHiIgIiIgAAACPf/dwB3eIR4iIAIgAAAAAj/dwB3eIREeIiAgAAAAAAIdwB3eIRMxHiIgIgAAAAAAIB3eIRMzMR4iICIgAAAAACHiIRMzMzEeIiAiIgAAAAAj3BMzs7MxHiIgIiIAAAAAI9wzM7MzMR4iICIiAAAAACPcM7L7MzEeIiAiIgAAAAAj3DM787MxHiIgIiIAAAAAI9wzs7M7ER4iICIiAAAAACPcMzOzESIeIiAiIgAAAAAj3DMzESId3iIgIiIAAAAAI9wzESId/93eICIiAAAAACPcESId/93d3dweIgAAAAAj3CId/93d3d4h3d4AAAAAI93d/93d3d4h3d4gAAAAACP//93d3d4h3d4gAAAAAAACId3d3d4iIiIgAAAAAAAAAAIh3d4gAAAAAAAAAAAAAAAAAiIgAAAAAAAAAAAAA////////j////gP///gA///gAD//gAAP/gAAB/gAAAfgAAAHwAAAB8AAAAfAAAAHwAAAD8AAAD/AAAA/4AAAH+AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD+AAAA/gAAAf4AAAP+AAAP/wAAP//AP///8P//8oAAAAEAAAACAAAAABAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAB4gAAAAAAAd3iIgAAAAHd/93iIAAh3f/cAh3gACH/3AHgAhwAI9wB3eICAAACAd8x4gAAAAIfMzHiAgAAAh8zseICIAACHzsR4gIgAAIfESPeAiAAAh4j/d3B3AACH/3d3eHgAAAiHd3iIgAAAAAiIgAAAAA/j93d/gPAIHgAwCggAO8AAADvAAAAwcAAAcAAIAP//+ABwD4gAMHB4ADBweAAwcHgAMHB4AHBwfADwcH8P8HBw==',
+                cb: function() {
+                    systemLifecycle.shutdownSystem()
+                }
             }
         )
 
