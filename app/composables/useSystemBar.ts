@@ -1,20 +1,16 @@
-const config = reactive<SystemBarConfig>({})
-
 export function useSystemBar(_config?: SystemBarConfig | undefined) {
-    if (_config) {
-        Object.assign(config, _config)
-    }
-
     const applicationManager = useApplicationManager()
     const desktopManager = useDesktopManager()
 
     const systemLifecycle = useSystemLifecycle()
 
+    const config = desktopManager.config
+
     const defaultTerminalApp = desktopManager.getDefaultApp('terminal')
     const defaultAuthApp = desktopManager.getDefaultApp('auth')
 
     const enabled = ref(false)
-    const windows = computed(() => applicationManager.openedWindows)
+    const windows = computed(() => applicationManager.windowsOpened)
 
     const menu = computed(() => {
         const systemBarMenu: any = [
