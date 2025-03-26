@@ -1,17 +1,14 @@
 <script setup lang="ts">
-const applicationMenuState = useState<{ enabled: boolean }>(STATE_SYSTEM_BAR_OPENED)
 const startButtonElement = useTemplateRef('startButtonElement')
 
-applicationMenuState.value = {
-  enabled: false
-}
+const systemBar = useSystemBar()
 
 function toggleApplicationMenu() {
-  applicationMenuState.value.enabled = !applicationMenuState.value.enabled
+  systemBar.enabled.value = !systemBar.enabled.value
 }
 
 function closeApplicationMenu(): void {
-  applicationMenuState.value.enabled = false
+  systemBar.enabled.value = false
 }
 
 onClickOutside(startButtonElement, () => closeApplicationMenu())
@@ -22,7 +19,7 @@ onClickOutside(startButtonElement, () => closeApplicationMenu())
       class="owd-button__system-bar-start"
       ref="startButtonElement"
       size="sb" bolded start
-      :active="applicationMenuState.enabled"
+      :active="systemBar.enabled.value"
       @pointerdown.self="toggleApplicationMenu"
   >
     <div class="owd-button__icon-start" />
@@ -30,7 +27,7 @@ onClickOutside(startButtonElement, () => closeApplicationMenu())
 
     <template #outer>
       <SystemBarMenu
-          v-if="applicationMenuState.enabled"
+          v-if="systemBar.enabled.value"
           @close="closeApplicationMenu"
       />
     </template>

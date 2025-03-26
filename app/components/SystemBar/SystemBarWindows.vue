@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const applicationManager = useApplicationManager()
+const systemBar = useSystemBar()
 </script>
 
 <template>
   <div class="owd-system-bar__windows">
     <Button
-        v-for="[windowId, window] of applicationManager.openedWindows"
+        v-for="[windowId, window] of systemBar.windows"
         size="sb"
         system-bar
         :active="window.state.active"

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 const desktop = useDesktopManager()
+const systemBar = useSystemBar(desktop.config.systemBar)
 
 const classes = computed(() => {
   const list = ['owd-desktop__system-bar']
 
-  if (desktop.config.systemBar?.position) {
+  if (systemBar.config.position) {
     list.push(
         'owd-desktop__system-bar--position',
-        `owd-desktop__system-bar--position-${desktop.config.systemBar.position}`
+        `owd-desktop__system-bar--position-${systemBar.config.position}`
     )
   }
 
@@ -19,7 +20,7 @@ const classes = computed(() => {
   <Toolbar :class="classes">
 
     <SystemBarButtonStart
-        v-if="desktop.config.systemBar?.startButton"
+        v-if="systemBar.config?.startButton"
     />
 
     <SystemBarWindows />

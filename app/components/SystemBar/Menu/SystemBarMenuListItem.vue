@@ -3,11 +3,11 @@ const props = defineProps<{
   closeOnClick?: boolean
 }>()
 
-const applicationMenuState = useState<{ enabled: boolean }>(STATE_SYSTEM_BAR_OPENED)
+const systemBar = useSystemBar()
 
 function onListClick() {
   if (props.closeOnClick) {
-    applicationMenuState.value.enabled = false
+    systemBar.enabled.value = false
   }
 }
 </script>
