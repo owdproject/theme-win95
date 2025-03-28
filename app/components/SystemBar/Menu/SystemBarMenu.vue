@@ -11,82 +11,106 @@ function onRootMenuItemClick(listItem) {
 </script>
 
 <template>
-  <Sheet border class="owd-system-bar__menu">
-    <div class="owd-system-bar__menu__title">
+  <Card pt:root="p-card--border owd-system-bar__menu">
+    <template #content>
 
-    </div>
-    <List class="owd-system-bar__menu__list">
-      <template
-          v-for="listItem of systemBar.menu.value"
-      >
+      <div class="owd-system-bar__menu__title">
 
-        <ListDivider
-            v-if="listItem.divider"
-        />
+      </div>
+      <List class="owd-system-bar__menu__list">
 
-        <ListItem
-            v-else
-            primary
-            :image="listItem.image"
-            :arrow="!!listItem.menu"
-            @click="onRootMenuItemClick(listItem)"
+        <!--
+        todo this should be refactored using proimevue TieredMenu
+        <TieredMenu :model="systemBar.menu.value">
+
+          <template #submenuicon>
+            <Icon name="mdi:caret-right"/>
+          </template>
+          <template #item="{ item, props, hasSubmenu }">
+            <a v-ripple class="flex items-center" v-bind="props.action">
+              <img v-if="item.image" :src="item.image"/>
+              <span class="ml-2">{{ item.label }}</span>
+              <Icon v-if="hasSubmenu" name="mdi:caret-right"/>
+            </a>
+          </template>
+
+        </TieredMenu>
+        -->
+
+        <template
+            v-for="listItem of systemBar.menu.value"
         >
-          {{ listItem.label }}
 
-          <SystemBarMenuSheet
-              v-if="listItem.menu"
+          <ListDivider
+              v-if="listItem.divider"
+          />
+
+          <ListItem
+              v-else
+              primary
+              :image="listItem.image"
+              :arrow="!!listItem.menu"
+              @click="onRootMenuItemClick(listItem)"
           >
-            <SystemBarMenuList
-                :menu="listItem.menu"
-            />
-          </SystemBarMenuSheet>
-        </ListItem>
+            {{ listItem.label }}
 
-      </template>
-    </List>
-  </Sheet>
+            <SystemBarMenuSheet
+                v-if="listItem.menu"
+            >
+              <SystemBarMenuList
+                  :menu="listItem.menu"
+              />
+            </SystemBarMenuSheet>
+          </ListItem>
+
+        </template>
+      </List>
+
+    </template>
+  </Card>
 </template>
 
 <style scoped lang="scss">
 .owd-system-bar__menu {
   position: absolute;
-  bottom: 30px;
+  bottom: 37px;
   left: var(--owd-win95-border-width);
   padding: var(--owd-win95-gap);
   max-height: 80dvh;
   width: 280px;
-  display: flex;
-  flex-direction: row;
   cursor: default;
   z-index: 99999999;
 
-  &__title {
-    background: rgb(var(--owd-elevation-inactive));
-    width: 36px;
-  }
+  :deep(> .p-card-body > .p-card-content) {
+    display: flex;
+    flex-direction: row;
 
-  &__list {
-    width: 100%;
+    .owd-system-bar__menu {
+      &__title {
+        background: rgb(var(--owd-elevation-inactive));
+        width: 36px;
+      }
 
-    .owd-list-item {
-      cursor: pointer;
-    }
+      &__list {
+        width: 100%;
 
-    :deep(.owd-sheet) {
-      position: absolute;
-      top: 0;
-      left: 100%;
-      margin-left: calc(var(--owd-win95-border-width) * -2);
-      min-width: 240px;
-    }
+        .owd-list-item {
+          cursor: pointer;
+        }
 
-    .owd-sheet {
-      display: none;
-    }
+        .p-card {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          min-width: 240px;
+          display: none;
+        }
 
-    .owd-list-item:hover {
-      .owd-sheet {
-        display: block;
+        .owd-list-item:hover {
+          .p-card {
+            display: block;
+          }
+        }
       }
     }
   }

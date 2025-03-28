@@ -46,17 +46,14 @@ function onWindowNavDestroy() {
 
       <ButtonMinimize
           v-if="!windowController?.instanced || windowController?.isMinimizable"
-          size="sm"
           @click="onWindowMinimize"
       />
       <ButtonMaximize
           v-if="windowController?.isMaximizable"
-          size="sm"
           @click="onWindowMaximize"
       />
       <ButtonClose
           v-if="!windowController?.instanced || windowController?.isDestroyable"
-          size="sm"
           @click="onWindowNavDestroy"
       />
 
@@ -71,7 +68,7 @@ function onWindowNavDestroy() {
   align-items: center;
   flex-shrink: 0;
   justify-content: space-between;
-  height: var(--owd-win95-windov-nav);
+  height: var(--owd-win95-windov-nav-height);
   margin-bottom: 2px;
   font-weight: bold;
   background: rgb(var(--owd-elevation-inactive));
@@ -84,8 +81,9 @@ function onWindowNavDestroy() {
 
   &__btn-group {
     display: flex;
-    gap: 4px;
+    gap: var(--owd-win95-gap);
     padding: var(--owd-win95-gap);
+    margin-right: -1px;
   }
 
   &__title {

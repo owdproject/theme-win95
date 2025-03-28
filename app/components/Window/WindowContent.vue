@@ -27,6 +27,7 @@ const classes = computed(() => {
 
   &--centered {
     align-content: center;
+    height: 100%;
   }
 }
 </style>

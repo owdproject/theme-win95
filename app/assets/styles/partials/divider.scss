@@ -1,0 +1,10 @@
+:root {
+  --owd-win95-divider-border-color: transparent;
+  --owd-win95-divider-vertical-margin: 0 4px;
+}
+
+.p-divider-solid {
+  border-style: solid;
+  border-color: rgb(254, 254, 254) rgb(132, 133, 132) rgb(132, 133, 132) rgb(254, 254, 254);
+  background: rgb(198, 198, 198);
+}

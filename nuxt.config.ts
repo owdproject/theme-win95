@@ -10,6 +10,17 @@ export default defineNuxtConfig({
         "#": resolve(__dirname, "."),
     },
 
+    primevue: {
+        options: {
+            theme: {
+                options: {
+                    prefix: 'owd-win95',
+                    cssLayer: false
+                }
+            }
+        }
+    },
+
     imports: {
         dirs: ['composables', 'consts', 'stores', 'utils'],
     },
@@ -21,7 +32,7 @@ export default defineNuxtConfig({
     },
 
     i18n: {
-        langDir: './lang',
+        langDir: './locales',
         locales: [{ code: 'en', file: 'en.json' }],
     },
 

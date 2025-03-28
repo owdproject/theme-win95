@@ -1,5 +1,5 @@
 <template>
-  <Button icon>
+  <Button size="small" pt:root="p-button--window-nav p-button--icon">
     <div class="owd-button__icon" />
   </Button>
 </template>
@@ -10,6 +10,8 @@
   height: 12px;
   top: 50%;
   left: 50%;
+  margin-left: -1px;
+  margin-top: -9px;
   transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
   position: relative;
 

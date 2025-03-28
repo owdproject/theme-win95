@@ -1,34 +1,19 @@
-<script setup lang="ts">
-const props = defineProps<{
-  border?: boolean;
-}>()
+:root {
 
-const classes = computed(() => {
-  const list = ['owd-sheet']
+}
 
-  if (props.border) {
-    list.push('owd-sheet--border')
-  }
-
-  return list
-})
-</script>
-
-<template>
-  <div :class="classes">
-    <slot />
-  </div>
-</template>
-
-<style scoped lang="scss">
-.owd-sheet {
-  background: var(--owd-win95-sheet-background);
-  color: var(--owd-win95-sheet-color);
-  border-color: var(--owd-win95-sheet-border-color);
-  box-shadow: var(--owd-win95-sheet-box-shadow);
+.p-card {
+  background: var(--owd-win95-card-background);
+  color: var(--owd-win95-card-color);
+  border-color: var(--owd-win95-card-border-color);
+  box-shadow: var(--owd-win95-card-box-shadow);
 
   &--border {
     box-shadow: rgb(var(--owd-win95-theme-color-white)) var(--owd-win95-border-width) var(--owd-win95-border-width) 0 0 inset, rgb(var(--owd-win95-theme-color-dark)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0px inset, rgb(var(--owd-win95-theme-color-black)) var(--owd-win95-border-width) var(--owd-win95-border-width) 0 0, rgb(var(--owd-win95-theme-color-grey)) 0 calc(var(--owd-win95-border-width) * -1) 0 0, rgb(var(--owd-win95-theme-color-grey)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0, rgb(var(--owd-win95-theme-color-black)) 0 var(--owd-win95-border-width) 0 0, rgb(var(--owd-win95-theme-color-black)) var(--owd-win95-border-width) 0 0, rgb(var(--owd-win95-theme-color-grey)) 0 calc(var(--owd-win95-border-width) * -1) 0 0, rgb(var(--owd-win95-theme-color-grey)) calc(var(--owd-win95-border-width) * -1) 0 0 0;
   }
+
+  &--inset {
+    border: var(--owd-win95-border-width) solid;
+    border-color: rgb(var(--owd-win95-theme-color-dark)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-dark))
+  }
 }
-</style>

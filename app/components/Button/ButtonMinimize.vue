@@ -1,12 +1,12 @@
 <template>
-  <Button icon>
+  <Button size="small" pt:root="p-button--window-nav p-button--icon">
     <div class="owd-button__icon" />
   </Button>
 </template>
 
 <style scoped lang="scss">
 .owd-button__icon {
-  width: 48%;
+  width: 11px;
   height: 100%;
   left: 50%;
   transform: translateX(-50%);

@@ -1,0 +1,21 @@
+:root {
+  --owd-win95-inputtext-padding-x: var(--owd-win95-input-padding-x);
+  --owd-win95-inputtext-padding-y: var(--owd-win95-input-padding-y);
+
+  --owd-win95-inputtext-color: var(--owd-win95-input-color);
+  --owd-win95-inputtext-background: var(--owd-win95-input-backgorund);
+
+  --owd-win95-inputtext-border-color: var(--owd-win95-input-border-color);
+  --owd-win95-inputtext-hover-border-color: var(--owd-win95-input-border-color);
+  --owd-win95-inputtext-focus-border-color: var(--owd-win95-input-border-color);
+
+  --owd-win95-inputtext-shadow: var(--owd-win95-input-box-shadow);
+  --owd-win95-inputtext-hover-ring-shadow: var(--owd-win95-input-box-shadow);
+  --owd-win95-inputtext-focus-ring-shadow: var(--owd-win95-input-box-shadow);
+}
+
+.p-inputtext {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--owd-win95-inputtext-border-color);
+}

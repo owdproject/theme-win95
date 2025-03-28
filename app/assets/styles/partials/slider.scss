@@ -1,0 +1,24 @@
+:root {
+  --owd-gnome-slider-handle-width: 16px;
+  --owd-gnome-slider-handle-height: 16px;
+  --owd-gnome-slider-range-background: var(--owd-gnome-adwaita-dark-primary-color);
+  --owd-gnome-slider-handle-background: #eee;
+  --owd-gnome-slider-handle-hover-background: white;
+  --owd-gnome-slider-handle-border-radius: 8px;
+
+  --owd-gnome-slider-track-background: #555;
+  --owd-gnome-slider-track-size: 4px;
+  --owd-gnome-slider-track-border-radius: 4px;
+}
+
+.p-slider {
+  font-weight: bold;
+
+  &-lg {
+
+  }
+
+  &--icon {
+    --owd-gnome-button-lg-padding-x: 10px;
+  }
+}

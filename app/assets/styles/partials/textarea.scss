@@ -1,0 +1,21 @@
+:root {
+  --owd-win95-textarea-padding-x: var(--owd-win95-input-padding-x);
+  --owd-win95-textarea-padding-y: var(--owd-win95-input-padding-y);
+
+  --owd-win95-textarea-color: var(--owd-win95-input-color);
+  --owd-win95-textarea-background: var(--owd-win95-input-backgorund);
+
+  --owd-win95-textarea-border-color: var(--owd-win95-input-border-color);
+  --owd-win95-textarea-hover-border-color: var(--owd-win95-input-border-color);
+  --owd-win95-textarea-focus-border-color: var(--owd-win95-input-border-color);
+
+  --owd-win95-textarea-shadow: var(--owd-win95-input-box-shadow);
+  --owd-win95-textarea-hover-ring-shadow: var(--owd-win95-input-box-shadow);
+  --owd-win95-textarea-focus-ring-shadow: var(--owd-win95-input-box-shadow);
+}
+
+.p-textarea {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--owd-win95-inputtext-border-color);
+}

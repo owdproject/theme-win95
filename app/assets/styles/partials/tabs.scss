@@ -1,0 +1,48 @@
+:root {
+  --owd-win95-tabs-tab-background: transparent;
+  --owd-win95-tabs-tab-hover-border-color: var(--owd-win95-card-border-color-alternative);
+}
+
+.p-tabs {
+  .p-tabpanels {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--owd-win95-card-border-color-alternative);
+    box-shadow: var(--owd-win95-card-box-shadow-alternative);
+    padding: 6px;
+    z-index: 2;
+  }
+
+  .p-tablist-tab-list {
+    border: 0;
+    padding-left: 12px;
+
+    .p-tab {
+      border-width: 2px;
+      border-color: var(--owd-win95-card-border-color-alternative);
+      box-shadow: var(--owd-win95-card-box-shadow-alternative);
+      padding: 5px 8px;
+      margin: 0 -2px;
+      margin-bottom: -4px !important;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      font-size: var(--owd-win95-font-size);
+
+      &-active {
+        margin-top: -3px;
+        border-bottom: 0;
+        z-index: 4;
+
+        &:after {
+          position: absolute;
+          bottom: 0;
+          left: var(--owd-win95-border-width);
+          right: var(--owd-win95-border-width);
+          height: 8px;
+          content: '';
+          background: var(--owd-win95-card-background);
+        }
+      }
+    }
+  }
+}

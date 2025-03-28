@@ -15,6 +15,10 @@ provide('windowController', handleWindowControllerProps(props))
 </template>
 
 <style scoped lang="scss">
+:deep(.owd-window__content) {
+  height: 100%;
+}
+
 iframe {
   border: 0;
   width: 100%;

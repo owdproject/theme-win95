@@ -37,7 +37,7 @@ const classes = computed(() => {
   padding: 8px 16px;
 
   &--density-compact {
-    padding: 0 10px;
+    padding: 4px 10px;
   }
 
   &:hover {

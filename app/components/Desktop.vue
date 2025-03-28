@@ -32,7 +32,7 @@ const systemLifecycle = useSystemLifecycle()
 
 .owd-desktop {
   font-family: var(--owd-win95-font-family), serif;
-  font-size: 14px;
+  font-size: var(--owd-win95-font-size);
 
   button {
     font-family: var(--owd-win95-font-family), serif;

@@ -1,10 +1,10 @@
-export function useSystemBar(_config?: SystemBarConfig | undefined) {
+export function useSystemBar() {
     const applicationManager = useApplicationManager()
     const desktopManager = useDesktopManager()
 
     const systemLifecycle = useSystemLifecycle()
 
-    const config = desktopManager.config
+    const config = desktopManager.config.systemBar
 
     const defaultTerminalApp = desktopManager.getDefaultApp('terminal')
     const defaultAuthApp = desktopManager.getDefaultApp('auth')
