@@ -10,7 +10,7 @@ export function useSystemBar() {
     const defaultAuthApp = desktopManager.getDefaultApp('auth')
 
     const enabled = ref(false)
-    const windows = computed(() => applicationManager.windowsOpened)
+    const windows: ComputedRef<any> = computed(() => applicationManager.windowsOpened)
 
     const menu = computed(() => {
         const systemBarMenu: any = [

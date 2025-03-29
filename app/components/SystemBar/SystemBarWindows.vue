@@ -9,7 +9,8 @@ const systemBar = useSystemBar()
   >
     <Button
         v-for="[windowId, window] of systemBar.windows.value"
-        :pt:root="{class: ['p-button--system-bar', {'p-button--active': window.state.active}]}"
+        :key="window.state.id"
+        :class="['p-button--system-bar', {'p-button--active': window.state.active}]"
         @pointerdown.self="window.actions.toggleMinimize"
     >
       <span v-text="window.state.title" />
