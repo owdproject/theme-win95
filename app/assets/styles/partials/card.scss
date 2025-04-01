@@ -13,6 +13,7 @@
   }
 
   &--inset {
+    box-shadow: none;
     border: var(--owd-win95-border-width) solid;
     border-color: rgb(var(--owd-win95-theme-color-dark)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-dark))
   }

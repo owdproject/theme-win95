@@ -2,11 +2,13 @@
 @use "./variants/default/variables";
 
 
+@use './partials/avatar.scss';
 @use './partials/button.scss';
 @use './partials/card.scss';
 @use './partials/checkbox.scss';
 @use './partials/divider.scss';
 @use './partials/input.scss';
+@use './partials/skeleton.scss';
 @use './partials/slider.scss';
 @use './partials/tabs.scss';
 @use './partials/textarea.scss';
@@ -30,7 +32,7 @@
   --owd-win95-theme-color-dark: 132, 133, 132;
 
   --owd-win95-input-padding-x: 8px;
-  --owd-win95-input-padding-y: 6px;
+  --owd-win95-input-padding-y: 3px;
   --owd-win95-input-color: black;
   --owd-win95-input-backgorund: white;
   --owd-win95-input-border-color: rgb(var(--owd-win95-theme-color-dark)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-dark));

@@ -9,7 +9,7 @@
     border-style: solid;
     border-color: var(--owd-win95-card-border-color-alternative);
     box-shadow: var(--owd-win95-card-box-shadow-alternative);
-    padding: 6px;
+    padding: 18px;
     z-index: 2;
   }
 
@@ -21,7 +21,7 @@
       border-width: 2px;
       border-color: var(--owd-win95-card-border-color-alternative);
       box-shadow: var(--owd-win95-card-box-shadow-alternative);
-      padding: 5px 8px;
+      padding: 5px 8px 3px;
       margin: 0 -2px;
       margin-bottom: -4px !important;
       border-top-left-radius: 5px;

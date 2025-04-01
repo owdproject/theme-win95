@@ -21,10 +21,17 @@
 
 .p-checkbox {
   margin-right: 8px;
+  align-items: center;
 
   &-box {
     border-width: 2px;
     border-style: solid;
     border-color: var(--owd-win95-checkbox-border-color);
+  }
+}
+
+label {
+  .p-checkbox-box {
+    margin-top: -6px;
   }
 }

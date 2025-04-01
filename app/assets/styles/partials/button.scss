@@ -1,9 +1,4 @@
 :root {
-  --owd-gnome-button-lg-padding-x: 14px;
-  --owd-gnome-button-lg-padding-y: 10px;
-  --owd-gnome-button-rounded-border-radius: 32px;
-  --owd-gnome-button-gap: 8px;
-
   --owd-win95-button-primary-background: rgb(var(--owd-win95-theme-color-light));
   --owd-win95-button-primary-hover-background: var(--owd-win95-button-primary-background);
   --owd-win95-button-primary-active-background: var(--owd-win95-button-primary-background);
@@ -114,5 +109,11 @@
   &--bolded {
     & > span {
     }
+  }
+}
+
+.p-buttongroup {
+  & > .p-button:not(:last-child) {
+    margin-right: -2px;
   }
 }
