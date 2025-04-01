@@ -1,7 +1,7 @@
 <template>
-  <Button size="small" pt:root="p-button--window-nav p-button--icon">
+  <ButtonWindowNav>
     <div class="owd-button__icon" />
-  </Button>
+  </ButtonWindowNav>
 </template>
 
 <style scoped lang="scss">

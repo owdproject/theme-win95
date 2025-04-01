@@ -26,17 +26,17 @@ function onWindowNavDestroy() {
   >
 
     <WindowNavIcon
-        v-if="windowController?.state.icon"
-        :icon="windowController.state.icon"
+        v-if="windowController?.icon"
+        :icon="windowController.icon"
     />
 
     <div
-        v-if="windowController?.state.title"
+        v-if="windowController.title"
         class="owd-window-nav__title"
     >
       <div
-          class="owd-window-nav__title-inner"
-          v-text="windowController?.state.title"
+          class="owd-window-nav__title-inner truncate"
+          v-text="windowController.title"
       />
     </div>
 
@@ -69,7 +69,6 @@ function onWindowNavDestroy() {
   flex-shrink: 0;
   justify-content: space-between;
   height: var(--owd-win95-windov-nav-height);
-  margin-bottom: 2px;
   font-weight: bold;
   background: rgb(var(--owd-elevation-inactive));
   color: rgb(var(--owd-win95-theme-color-light));

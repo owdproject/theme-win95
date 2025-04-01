@@ -20,7 +20,7 @@ function onRootMenuItemClick(listItem) {
       <List class="owd-system-bar__menu__list">
 
         <!--
-        todo this should be refactored using proimevue TieredMenu
+        todo this one day should eventually be refactored using primevue TieredMenu
         <TieredMenu :model="systemBar.menu.value">
 
           <template #submenuicon>

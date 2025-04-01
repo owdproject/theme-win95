@@ -31,7 +31,7 @@ const classes = computed(() => {
       </div>
 
       <div>
-        <Card pt:root="p-card--inset">
+        <Card class="p-card--inset">
           <template #content>
             <CoreTime/>
           </template>

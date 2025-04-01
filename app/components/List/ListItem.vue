@@ -23,7 +23,10 @@ const classes = computed(() => {
 
 <template>
   <div :class="classes">
-    <img v-if="image" :src="image"/>
+    <slot name="icon">
+      <img v-if="image" :src="image"/>
+    </slot>
+
     <slot/>
 
     <Icon v-if="arrow" name="mdi:menu-right"/>
@@ -52,13 +55,14 @@ const classes = computed(() => {
   }
 
   img {
+    display: inline-block;
     width: 32px;
     height: 32px;
     margin-right: 12px;
     vertical-align: middle;
   }
 
-  :deep(.iconify) {
+  :deep(> .iconify) {
     position: absolute;
     right: -2px;
     top: 50%;

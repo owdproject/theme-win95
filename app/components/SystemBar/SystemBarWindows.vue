@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const systemBar = useSystemBar()
+const asd = useApplicationManager()
 </script>
 
 <template>
@@ -13,7 +14,7 @@ const systemBar = useSystemBar()
         :class="['p-button--system-bar', {'p-button--active': window.state.active}]"
         @pointerdown.self="window.actions.toggleMinimize"
     >
-      <span v-text="window.state.title" />
+      <span v-text="window.title" />
 
       <component
           v-show="window.state.active"

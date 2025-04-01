@@ -36,16 +36,6 @@ export default defineNuxtConfig({
         locales: [{ code: 'en', file: 'en.json' }],
     },
 
-    vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    api: 'modern-compiler'
-                }
-            }
-        },
-    },
-
     future: {
         compatibilityVersion: 4,
     },

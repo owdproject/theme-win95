@@ -14,11 +14,11 @@ provide('windowController', handleWindowControllerProps(props))
       <template #header>
         <WindowNav>
 
-          <template v-slot:nav-prepend>
+          <template v-slot:-prepend>
             <slot name="nav-prepend"/>
           </template>
 
-          <template v-slot:nav-append>
+          <template v-slot:append>
             <slot name="nav-append"/>
           </template>
 
@@ -52,6 +52,10 @@ provide('windowController', handleWindowControllerProps(props))
     flex-direction: column;
     height: 100%;
     padding: var(--owd-win95-gap);
+
+    > .p-card-header {
+      margin-bottom: 2px;
+    }
 
     > .p-card-body {
       height: calc(100% - var(--owd-win95-windov-nav-height));
