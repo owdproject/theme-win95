@@ -2,13 +2,13 @@
   "name": "owd-theme-win95",
   "version": "3.0.0-alpha.0",
   "description": "Open Web Desktop theme",
-  "homepage": "https://github.com/owdproject/owd-theme-win95#readme",
+  "homepage": "https://github.com/owdproject/theme-win95#readme",
   "bugs": {
-    "url": "https://github.com/owdproject/owd-theme-win95/issues"
+    "url": "https://github.com/owdproject/theme-win95/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/owdproject/owd-theme-win95.git"
+    "url": "git+https://github.com/owdproject/theme-win95.git"
   },
   "license": "MIT",
   "author": {
