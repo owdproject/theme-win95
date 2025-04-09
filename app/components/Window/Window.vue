@@ -1,20 +1,10 @@
-<script setup lang="ts">
-const props = defineProps<{
-  config?: WindowConfig
-  window?: IWindowController
-  content?: any
-}>()
-
-provide('windowController', handleWindowControllerProps(props))
-</script>
-
 <template>
   <CoreWindow>
     <Card pt:root="p-card--border">
       <template #header>
         <WindowNav>
 
-          <template v-slot:-prepend>
+          <template v-slot:prepend>
             <slot name="nav-prepend"/>
           </template>
 
@@ -25,9 +15,7 @@ provide('windowController', handleWindowControllerProps(props))
         </WindowNav>
       </template>
       <template #content>
-        <WindowContent
-            v-bind="content"
-        >
+        <WindowContent>
 
           <slot/>
 
@@ -39,13 +27,13 @@ provide('windowController', handleWindowControllerProps(props))
 
 <style scoped lang="scss">
 .owd-window.resizable-component {
-  position: fixed;
   box-sizing: border-box;
   display: inline-block;
   min-width: 160px;
   min-height: 160px;
   text-align: left;
   cursor: default;
+  border-radius: var(--owd-window-border-radius);
 
   :deep(> .p-card) {
     display: flex;

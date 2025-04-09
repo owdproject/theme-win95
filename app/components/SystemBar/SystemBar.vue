@@ -100,7 +100,7 @@ const classes = computed(() => {
   // system bar position
 
   &--position {
-    position: absolute;
+    position: fixed;
 
     &-top, &-bottom {
       width: 100%;

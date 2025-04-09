@@ -31,12 +31,12 @@ function onWindowNavDestroy() {
     />
 
     <div
-        v-if="windowController.title"
+        v-if="windowController?.title"
         class="owd-window-nav__title"
     >
       <div
           class="owd-window-nav__title-inner truncate"
-          v-text="windowController.title"
+          v-text="windowController?.title"
       />
     </div>
 
@@ -74,8 +74,8 @@ function onWindowNavDestroy() {
   color: rgb(var(--owd-win95-theme-color-light));
 
   &--focused {
-    background: rgb(var(--owd-elevation-active));
-    color: rgb(var(--owd-win95-theme-color-white))
+    background: rgb(var(--owd-elevation-active-background));
+    color: rgb(var(--owd-elevation-active-color))
   }
 
   &__btn-group {

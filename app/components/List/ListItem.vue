@@ -49,8 +49,8 @@ const classes = computed(() => {
 
   &--primary {
     &:hover {
-      background: rgb(var(--owd-elevation-active));
-      color: rgb(var(--owd-win95-theme-color-white)) !important;
+      background: rgb(var(--owd-elevation-active-background));
+      color: rgb(var(--owd-elevation-active-color)) !important;
     }
   }
 

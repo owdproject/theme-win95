@@ -2,7 +2,7 @@
 import '#/desktop.config'
 
 defineProps<{
-  systemBar?: SystemBarConfig
+  systemBar?: DesktopSystemBarConfig
 }>()
 
 const desktop = useDesktopManager()
@@ -21,8 +21,11 @@ const systemLifecycle = useSystemLifecycle()
     <SystemBar
         v-if="desktop.config.systemBar?.enabled"
     />
+    <CoreApplicationRender
+        v-else
+    />
 
-    <DesktopShutdown :active="systemLifecycle.isShuttingDown.value"  />
+    <DesktopShutdown :active="systemLifecycle.isShuttingDown.value"/>
 
   </CoreDesktop>
 </template>

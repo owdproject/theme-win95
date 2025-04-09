@@ -3,18 +3,18 @@
 }
 
 .p-card {
-  background: var(--owd-win95-card-background);
+  background: var(--owd-surface-900);
   color: var(--owd-win95-card-color);
   border-color: var(--owd-win95-card-border-color);
   box-shadow: var(--owd-win95-card-box-shadow);
 
   &--border {
-    box-shadow: rgb(var(--owd-win95-theme-color-white)) var(--owd-win95-border-width) var(--owd-win95-border-width) 0 0 inset, rgb(var(--owd-win95-theme-color-dark)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0px inset, rgb(var(--owd-win95-theme-color-black)) var(--owd-win95-border-width) var(--owd-win95-border-width) 0 0, rgb(var(--owd-win95-theme-color-grey)) 0 calc(var(--owd-win95-border-width) * -1) 0 0, rgb(var(--owd-win95-theme-color-grey)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0, rgb(var(--owd-win95-theme-color-black)) 0 var(--owd-win95-border-width) 0 0, rgb(var(--owd-win95-theme-color-black)) var(--owd-win95-border-width) 0 0, rgb(var(--owd-win95-theme-color-grey)) 0 calc(var(--owd-win95-border-width) * -1) 0 0, rgb(var(--owd-win95-theme-color-grey)) calc(var(--owd-win95-border-width) * -1) 0 0 0;
+    box-shadow: var(--owd-win95-border);
   }
 
   &--inset {
     box-shadow: none;
     border: var(--owd-win95-border-width) solid;
-    border-color: rgb(var(--owd-win95-theme-color-dark)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-dark))
+    border-color: rgb(var(--owd-win95-theme-color-dark)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-dark));
   }
 }

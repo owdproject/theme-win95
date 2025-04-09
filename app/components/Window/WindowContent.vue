@@ -1,28 +1,7 @@
-<script setup lang="ts">
-const props = defineProps<{
-  centered?: boolean
-  padded?: boolean
-}>()
-
-const classes = computed(() => {
-  const list = ['owd-window__content']
-
-  if (props.centered) {
-    list.push('owd-window__content--centered')
-  }
-
-  if (props.padded) {
-    list.push('p-2')
-  }
-
-  return list
-})
-</script>
-
 <template>
-  <div :class="classes">
+  <CoreWindowContent>
     <slot />
-  </div>
+  </CoreWindowContent>
 </template>
 
 <style scoped lang="scss">

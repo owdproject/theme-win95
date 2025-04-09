@@ -47,7 +47,7 @@
     cursor: pointer;
   }
 
-  [aria-label="primary"] {
+  &--primary {
     &:before {
       left: 2px;
       top: 2px;

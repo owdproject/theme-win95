@@ -4,8 +4,6 @@ const props = defineProps<{
   window?: IWindowController
   src: string
 }>()
-
-provide('windowController', handleWindowControllerProps(props))
 </script>
 
 <template>

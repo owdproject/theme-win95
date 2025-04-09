@@ -1,0 +1,51 @@
+:root {
+  --owd-win95-menu-background: var(--owd-surface-900);
+  --owd-win95-menu-shadow: var(--owd-win95-border);
+  --owd-win95-menu-item-padding: 8px 8px;
+  --owd-win95-menu-submenu-label-padding: 4px 8px;
+  --owd-win95-menu-submenu-label-font-weight: 600;
+
+  --owd-win95-menubar-item-padding: 8px 8px;
+  --owd-win95-menubar-base-item-padding: 8px 12px;
+}
+
+.p-menubar {
+  .p-menubar-submenu {
+    padding: 4px;
+    border-radius: 0;
+    box-shadow: var(--owd-win95-border);
+
+    .p-menubar-item, .p-menu-item {
+
+      &:hover {
+        background: rgb(var(--owd-elevation-active-background));
+        color: rgb(var(--owd-elevation-active-color)) !important;
+      }
+    }
+  }
+
+  &--large {
+    .p-menubar-submenu {
+      .p-menubar-item {
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+}
+
+.p-menu {
+  font-family: var(--owd-win95-font-family);
+  font-size: var(--owd-win95-font-size);
+
+  .p-menu-list {
+    padding: 4px;
+
+    .p-menu-item {
+      &:hover {
+        background: rgb(var(--owd-elevation-active-background));
+        color: rgb(var(--owd-elevation-active-color)) !important;
+      }
+    }
+  }
+}
