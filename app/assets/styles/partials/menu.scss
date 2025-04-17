@@ -18,8 +18,8 @@
     .p-menubar-item, .p-menu-item {
 
       &:hover {
-        background: rgb(var(--p-elevation-active-background));
-        color: rgb(var(--p-elevation-active-color)) !important;
+        background: rgb(var(--owd-elevation-active-background));
+        color: rgb(var(--owd-elevation-active-color)) !important;
       }
     }
   }
@@ -43,8 +43,8 @@
 
     .p-menu-item {
       &:hover {
-        background: rgb(var(--p-elevation-active-background));
-        color: rgb(var(--p-elevation-active-color)) !important;
+        background: rgb(var(--owd-elevation-active-background));
+        color: rgb(var(--owd-elevation-active-color)) !important;
       }
     }
   }

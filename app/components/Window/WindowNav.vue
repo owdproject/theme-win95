@@ -70,12 +70,12 @@ function onWindowNavDestroy() {
   justify-content: space-between;
   height: var(--p-windov-nav-height);
   font-weight: bold;
-  background: rgb(var(--p-elevation-inactive));
+  background: rgb(var(--owd-elevation-inactive));
   color: rgb(var(--p-theme-color-light));
 
   &--focused {
-    background: rgb(var(--p-elevation-active-background));
-    color: rgb(var(--p-elevation-active-color))
+    background: rgb(var(--owd-elevation-active-background));
+    color: rgb(var(--owd-elevation-active-color))
   }
 
   &__btn-group {

@@ -87,7 +87,7 @@ function onRootMenuItemClick(listItem) {
 
     .owd-system-bar__menu {
       &__title {
-        background: rgb(var(--p-elevation-inactive));
+        background: rgb(var(--owd-elevation-inactive));
         width: 36px;
       }
 
