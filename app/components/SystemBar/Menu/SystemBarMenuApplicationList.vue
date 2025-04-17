@@ -1,25 +1,19 @@
 <script setup lang="ts">
 defineProps<{
-  applicationManagerAppList: any
+  applicationsEntries: any
   arrow?: boolean
 }>()
 
-const applicationManager = useApplicationManager()
-
-function onSystemBarAppClick(applicationId: string) {
-  applicationManager.openApp(applicationId)
+function onSystemBarAppClick(entry: ApplicationEntry) {
+  entry.application.execCommand(entry.command)
 }
 </script>
 
 <template>
   <SystemBarMenuApplicationListItem
-      v-for="[applicationId, application] of applicationManagerAppList"
-      :application="application"
+      v-for="applicationEntry of applicationsEntries"
+      :entry="applicationEntry"
       :arrow="arrow"
-      @click="onSystemBarAppClick(applicationId)"
+      @click="onSystemBarAppClick(applicationEntry)"
   />
 </template>
-
-<style scoped lang="scss">
-
-</style>

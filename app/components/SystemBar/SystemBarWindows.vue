@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const systemBar = useSystemBar()
-const asd = useApplicationManager()
 </script>
 
 <template>

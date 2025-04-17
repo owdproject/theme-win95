@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <SystemBarMenuApplicationList
       v-if="menu.type === 'applicationList'"
-      :application-manager-app-list="menu.list"
+      :applications-entries="menu.list"
   />
 </template>
 

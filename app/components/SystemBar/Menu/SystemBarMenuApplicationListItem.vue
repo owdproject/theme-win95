@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  application: ApplicationController
+  entry: ApplicationEntryWithInherited
   arrow?: boolean
 }>()
 </script>
@@ -15,10 +15,10 @@ defineProps<{
   >
     <div class="flex">
       <div>
-        <Icon :name="application.config.icon" :size="21" />
+        <Icon :name="entry.icon" :size="21" />
       </div>
       <div class="flex-1 pl-2">
-        {{ application.config.name }}
+        {{ entry.title }}
       </div>
     </div>
   </SystemBarMenuListItem>
