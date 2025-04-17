@@ -1,19 +1,19 @@
 :root {
-  --owd-win95-menu-background: var(--owd-surface-900);
-  --owd-win95-menu-shadow: var(--owd-win95-border);
-  --owd-win95-menu-item-padding: 8px 8px;
-  --owd-win95-menu-submenu-label-padding: 4px 8px;
-  --owd-win95-menu-submenu-label-font-weight: 600;
+  --owd-menu-background: var(--owd-surface-900);
+  --owd-menu-shadow: var(--owd-border);
+  --owd-menu-item-padding: 8px 8px;
+  --owd-menu-submenu-label-padding: 4px 8px;
+  --owd-menu-submenu-label-font-weight: 600;
 
-  --owd-win95-menubar-item-padding: 8px 8px;
-  --owd-win95-menubar-base-item-padding: 8px 12px;
+  --owd-menubar-item-padding: 8px 8px;
+  --owd-menubar-base-item-padding: 8px 12px;
 }
 
 .p-menubar {
   .p-menubar-submenu {
     padding: 4px;
     border-radius: 0;
-    box-shadow: var(--owd-win95-border);
+    box-shadow: var(--owd-border);
 
     .p-menubar-item, .p-menu-item {
 
@@ -35,8 +35,8 @@
 }
 
 .p-menu {
-  font-family: var(--owd-win95-font-family);
-  font-size: var(--owd-win95-font-size);
+  font-family: var(--owd-font-family);
+  font-size: var(--owd-font-size);
 
   .p-menu-list {
     padding: 4px;

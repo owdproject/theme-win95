@@ -1,5 +1,3 @@
-import {useAppEntries} from "~/app/composables/useAppEntries";
-
 export function useSystemBar() {
     const applicationManager = useApplicationManager()
     const desktopManager = useDesktopManager()

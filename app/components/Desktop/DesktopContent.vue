@@ -28,12 +28,12 @@ const classes = computed(() => {
   overflow: hidden;
 
   &--system-bar-position-top {
-    height: calc(100% - var(--owd-win95-system-bar-height));
-    top: var(--owd-win95-system-bar-height);
+    height: calc(100% - var(--owd-system-bar-height));
+    top: var(--owd-system-bar-height);
   }
 
   &--system-bar-position-bottom {
-    height: calc(100% - var(--owd-win95-system-bar-height));
+    height: calc(100% - var(--owd-system-bar-height));
   }
 }
 </style>

@@ -1,22 +1,22 @@
 :root {
-  --owd-win95-checkbox-width: 18px;
-  --owd-win95-checkbox-height: 18px;
+  --owd-checkbox-width: 18px;
+  --owd-checkbox-height: 18px;
 
-  --owd-win95-inputtext-color: var(--owd-win95-input-color);
-  --owd-win95-checkbox-background: var(--owd-win95-input-backgorund);
-  --owd-win95-checkbox-checked-background: var(--owd-win95-input-backgorund);
-  --owd-win95-checkbox-checked-hover-background: var(--owd-win95-input-backgorund);
-  --owd-win95-checkbox-hover-background: var(--owd-win95-input-backgorund);
+  --owd-inputtext-color: var(--owd-input-color);
+  --owd-checkbox-background: var(--owd-input-backgorund);
+  --owd-checkbox-checked-background: var(--owd-input-backgorund);
+  --owd-checkbox-checked-hover-background: var(--owd-input-backgorund);
+  --owd-checkbox-hover-background: var(--owd-input-backgorund);
 
-  --owd-win95-checkbox-border-color: var(--owd-win95-input-border-color);
-  --owd-win95-checkbox-hover-border-color: var(--owd-win95-input-border-color);
-  --owd-win95-checkbox-checked-hover-border-color: var(--owd-win95-input-border-color);
-  --owd-win95-checkbox-checked-border-color: var(--owd-win95-input-border-color);
-  --owd-win95-inputtext-focus-border-color: var(--owd-win95-input-border-color);
+  --owd-checkbox-border-color: var(--owd-input-border-color);
+  --owd-checkbox-hover-border-color: var(--owd-input-border-color);
+  --owd-checkbox-checked-hover-border-color: var(--owd-input-border-color);
+  --owd-checkbox-checked-border-color: var(--owd-input-border-color);
+  --owd-inputtext-focus-border-color: var(--owd-input-border-color);
 
-  --owd-win95-checkbox-shadow: var(--owd-win95-input-box-shadow);
-  --owd-win95-inputtext-hover-ring-shadow: var(--owd-win95-input-box-shadow);
-  --owd-win95-inputtext-focus-ring-shadow: var(--owd-win95-input-box-shadow);
+  --owd-checkbox-shadow: var(--owd-input-box-shadow);
+  --owd-inputtext-hover-ring-shadow: var(--owd-input-box-shadow);
+  --owd-inputtext-focus-ring-shadow: var(--owd-input-box-shadow);
 }
 
 .p-checkbox {
@@ -26,7 +26,7 @@
   &-box {
     border-width: 2px;
     border-style: solid;
-    border-color: var(--owd-win95-checkbox-border-color);
+    border-color: var(--owd-checkbox-border-color);
   }
 }
 

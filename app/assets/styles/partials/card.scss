@@ -4,17 +4,17 @@
 
 .p-card {
   background: var(--owd-surface-900);
-  color: var(--owd-win95-card-color);
-  border-color: var(--owd-win95-card-border-color);
-  box-shadow: var(--owd-win95-card-box-shadow);
+  color: var(--owd-card-color);
+  border-color: var(--owd-card-border-color);
+  box-shadow: var(--owd-card-box-shadow);
 
   &--border {
-    box-shadow: var(--owd-win95-border);
+    box-shadow: var(--owd-border);
   }
 
   &--inset {
     box-shadow: none;
-    border: var(--owd-win95-border-width) solid;
-    border-color: rgb(var(--owd-win95-theme-color-dark)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-dark));
+    border: var(--owd-border-width) solid;
+    border-color: rgb(var(--owd-theme-color-dark)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-dark));
   }
 }

@@ -1,14 +1,14 @@
 :root {
-  --owd-win95-tabs-tab-background: transparent;
-  --owd-win95-tabs-tab-hover-border-color: var(--owd-win95-card-border-color-alternative);
+  --owd-tabs-tab-background: transparent;
+  --owd-tabs-tab-hover-border-color: var(--owd-card-border-color-alternative);
 }
 
 .p-tabs {
   .p-tabpanels {
     border-width: 2px;
     border-style: solid;
-    border-color: var(--owd-win95-card-border-color-alternative);
-    box-shadow: var(--owd-win95-card-box-shadow-alternative);
+    border-color: var(--owd-card-border-color-alternative);
+    box-shadow: var(--owd-card-box-shadow-alternative);
     padding: 18px;
     z-index: 2;
   }
@@ -19,14 +19,14 @@
 
     .p-tab {
       border-width: 2px;
-      border-color: var(--owd-win95-card-border-color-alternative);
-      box-shadow: var(--owd-win95-card-box-shadow-alternative);
+      border-color: var(--owd-card-border-color-alternative);
+      box-shadow: var(--owd-card-box-shadow-alternative);
       padding: 5px 8px 3px;
       margin: 0 -2px;
       margin-bottom: -4px !important;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      font-size: var(--owd-win95-font-size);
+      font-size: var(--owd-font-size);
 
       &-active {
         margin-top: -3px;
@@ -36,8 +36,8 @@
         &:after {
           position: absolute;
           bottom: 0;
-          left: var(--owd-win95-border-width);
-          right: var(--owd-win95-border-width);
+          left: var(--owd-border-width);
+          right: var(--owd-border-width);
           height: 8px;
           content: '';
           background: var(--owd-surface-900);

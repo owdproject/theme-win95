@@ -1,17 +1,17 @@
 :root {
-  --owd-win95-button-primary-background: rgb(var(--owd-win95-theme-color-light));
-  --owd-win95-button-primary-hover-background: var(--owd-win95-button-primary-background);
-  --owd-win95-button-primary-active-background: var(--owd-win95-button-primary-background);
-  --owd-win95-button-primary-hover-background: var(--owd-win95-button-primary-background);
+  --owd-button-primary-background: rgb(var(--owd-theme-color-light));
+  --owd-button-primary-hover-background: var(--owd-button-primary-background);
+  --owd-button-primary-active-background: var(--owd-button-primary-background);
+  --owd-button-primary-hover-background: var(--owd-button-primary-background);
 
-  --owd-win95-button-primary-border-color: var(--owd-win95-card-border-color)
+  --owd-button-primary-border-color: var(--owd-card-border-color)
 }
 
 .p-button {
   display: inline-block;
   min-width: 34px;
   height: 34px;
-  font-size: var(--owd-win95-font-size);
+  font-size: var(--owd-font-size);
   border: 0;
   padding: 0;
 
@@ -22,9 +22,9 @@
     width: 100%;
     height: 100%;
     border-style: solid;
-    border-width: var(--owd-win95-border-width);
-    border-color: var(--owd-win95-card-border-color);
-    box-shadow: var(--owd-win95-card-box-shadow);
+    border-width: var(--owd-border-width);
+    border-color: var(--owd-card-border-color);
+    box-shadow: var(--owd-card-box-shadow);
     content: '';
   }
 
@@ -34,8 +34,8 @@
     }
 
     &:before {
-      border-color: rgb(var(--owd-win95-theme-color-black)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-white)) rgb(var(--owd-win95-theme-color-black));
-      box-shadow: rgb(var(--owd-win95-theme-color-dark)) var(--owd-win95-border-width) var(--owd-win95-border-width) 0 0 inset, rgb(var(--owd-win95-theme-color-grey)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0 inset;
+      border-color: rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-black));
+      box-shadow: rgb(var(--owd-theme-color-dark)) var(--owd-border-width) var(--owd-border-width) 0 0 inset, rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0 inset;
     }
 
     :deep(span .owd-button__icon) {
@@ -51,15 +51,15 @@
     &:before {
       left: 2px;
       top: 2px;
-      width: calc(100% - var(--owd-win95-gap));
-      height: calc(100% - var(--owd-win95-gap));
-      outline: var(--owd-win95-card-color) solid var(--owd-win95-border-width);
+      width: calc(100% - var(--owd-gap));
+      height: calc(100% - var(--owd-gap));
+      outline: var(--owd-card-color) solid var(--owd-border-width);
     }
   }
 
   [disabled] {
-    color: rgb(var(--owd-win95-theme-color-dark));
-    text-shadow: rgb(var(--owd-win95-theme-color-white)) var(--owd-win95-border-width) 1px;
+    color: rgb(var(--owd-theme-color-dark));
+    text-shadow: rgb(var(--owd-theme-color-white)) var(--owd-border-width) 1px;
   }
 
   &:not(&--icon) {
@@ -100,8 +100,8 @@
       }
 
       &:before {
-        background: repeating-conic-gradient(rgb(var(--owd-win95-theme-color-grey)) 0% 25%, rgb(var(--owd-win95-theme-color-white)) 25% 50%) 0 0 / calc(var(--owd-win95-border-width) * 2) calc(var(--owd-win95-border-width) * 2);
-        box-shadow: rgb(var(--owd-win95-theme-color-dark)) var(--owd-win95-border-width) var(--owd-win95-border-width) 0 0 inset, rgb(var(--owd-win95-theme-color-grey)) calc(var(--owd-win95-border-width) * -1) calc(var(--owd-win95-border-width) * -1) 0 0 inset, rgb(var(--owd-win95-theme-color-white)) 0 2px 0 0 inset;
+        background: repeating-conic-gradient(rgb(var(--owd-theme-color-grey)) 0% 25%, rgb(var(--owd-theme-color-white)) 25% 50%) 0 0 / calc(var(--owd-border-width) * 2) calc(var(--owd-border-width) * 2);
+        box-shadow: rgb(var(--owd-theme-color-dark)) var(--owd-border-width) var(--owd-border-width) 0 0 inset, rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0 inset, rgb(var(--owd-theme-color-white)) 0 2px 0 0 inset;
       }
     }
   }

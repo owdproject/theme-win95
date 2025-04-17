@@ -1,21 +1,21 @@
 :root {
-  --owd-win95-textarea-padding-x: var(--owd-win95-input-padding-x);
-  --owd-win95-textarea-padding-y: var(--owd-win95-input-padding-y);
+  --owd-textarea-padding-x: var(--owd-input-padding-x);
+  --owd-textarea-padding-y: var(--owd-input-padding-y);
 
-  --owd-win95-textarea-color: var(--owd-win95-input-color);
-  --owd-win95-textarea-background: var(--owd-win95-input-backgorund);
+  --owd-textarea-color: var(--owd-input-color);
+  --owd-textarea-background: var(--owd-input-backgorund);
 
-  --owd-win95-textarea-border-color: var(--owd-win95-input-border-color);
-  --owd-win95-textarea-hover-border-color: var(--owd-win95-input-border-color);
-  --owd-win95-textarea-focus-border-color: var(--owd-win95-input-border-color);
+  --owd-textarea-border-color: var(--owd-input-border-color);
+  --owd-textarea-hover-border-color: var(--owd-input-border-color);
+  --owd-textarea-focus-border-color: var(--owd-input-border-color);
 
-  --owd-win95-textarea-shadow: var(--owd-win95-input-box-shadow);
-  --owd-win95-textarea-hover-ring-shadow: var(--owd-win95-input-box-shadow);
-  --owd-win95-textarea-focus-ring-shadow: var(--owd-win95-input-box-shadow);
+  --owd-textarea-shadow: var(--owd-input-box-shadow);
+  --owd-textarea-hover-ring-shadow: var(--owd-input-box-shadow);
+  --owd-textarea-focus-ring-shadow: var(--owd-input-box-shadow);
 }
 
 .p-textarea {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--owd-win95-inputtext-border-color);
+  border-color: var(--owd-inputtext-border-color);
 }
