@@ -30,7 +30,7 @@ const systemBar = useSystemBar()
   height: 100%;
 
   :deep(> .owd-button) {
-    margin-right: var(--owd-gap);
+    margin-right: var(--p-gap);
   }
 }
 </style>

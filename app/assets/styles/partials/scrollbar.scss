@@ -15,26 +15,26 @@ $win95-img-scrollbar-bg-active: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA
 $win95-img-resizer: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==';
 
 @mixin win95-well-border {
-  border-top: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
-  border-left: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
-  border-right: var(--owd-border-width) solid $win95-ui-main-color;
-  border-bottom: var(--owd-border-width) solid $win95-ui-main-color;
+  border-top: var(--p-border-width) solid $win95-ui-outer-shadow-color;
+  border-left: var(--p-border-width) solid $win95-ui-outer-shadow-color;
+  border-right: var(--p-border-width) solid $win95-ui-main-color;
+  border-bottom: var(--p-border-width) solid $win95-ui-main-color;
   box-shadow: -1px -1px 0 $win95-ui-inner-shadow-color, -1px 0 0 $win95-ui-inner-shadow-color, 0 -1px 0 0 $win95-ui-inner-shadow-color, 1px 0 0 $win95-ui-highlight-color, 1px 1px 0 $win95-ui-highlight-color, 0 1px 0 $win95-ui-highlight-color;
 }
 
 @mixin win95-emboss-border {
-  border-top: var(--owd-border-width) solid $win95-ui-main-color;
-  border-left: var(--owd-border-width) solid $win95-ui-main-color;
-  border-right: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
-  border-bottom: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
+  border-top: var(--p-border-width) solid $win95-ui-main-color;
+  border-left: var(--p-border-width) solid $win95-ui-main-color;
+  border-right: var(--p-border-width) solid $win95-ui-outer-shadow-color;
+  border-bottom: var(--p-border-width) solid $win95-ui-outer-shadow-color;
   box-shadow: inset 1px 1px 0 0 $win95-ui-highlight-color, inset -1px -1px 0 0 $win95-ui-inner-shadow-color;
 }
 
 @mixin win95-depressed-border {
-  border-top: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
-  border-left: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
-  border-bottom: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
-  border-right: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
+  border-top: var(--p-border-width) solid $win95-ui-outer-shadow-color;
+  border-left: var(--p-border-width) solid $win95-ui-outer-shadow-color;
+  border-bottom: var(--p-border-width) solid $win95-ui-inner-shadow-color;
+  border-right: var(--p-border-width) solid $win95-ui-inner-shadow-color;
   box-shadow: inset 1px 1px 0 0 $win95-ui-inner-shadow-color, 1px 1px 0 0 $win95-ui-outer-shadow-color, 1px 0 0 0 $win95-ui-outer-shadow-color, 0 1px 0 0 $win95-ui-outer-shadow-color;
 }
 
@@ -144,10 +144,10 @@ body {
   &:vertical:decrement:end { display: none; }
 
   &:active {
-    border-top: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
-    border-left: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
-    border-bottom: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
-    border-right: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
+    border-top: var(--p-border-width) solid $win95-ui-inner-shadow-color;
+    border-left: var(--p-border-width) solid $win95-ui-inner-shadow-color;
+    border-bottom: var(--p-border-width) solid $win95-ui-inner-shadow-color;
+    border-right: var(--p-border-width) solid $win95-ui-inner-shadow-color;
     box-shadow: none;
   }
 }

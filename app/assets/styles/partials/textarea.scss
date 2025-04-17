@@ -1,21 +1,21 @@
 :root {
-  --owd-textarea-padding-x: var(--owd-input-padding-x);
-  --owd-textarea-padding-y: var(--owd-input-padding-y);
+  --p-textarea-padding-x: var(--p-input-padding-x);
+  --p-textarea-padding-y: var(--p-input-padding-y);
 
-  --owd-textarea-color: var(--owd-input-color);
-  --owd-textarea-background: var(--owd-input-backgorund);
+  --p-textarea-color: var(--p-input-color);
+  --p-textarea-background: var(--p-input-backgorund);
 
-  --owd-textarea-border-color: var(--owd-input-border-color);
-  --owd-textarea-hover-border-color: var(--owd-input-border-color);
-  --owd-textarea-focus-border-color: var(--owd-input-border-color);
+  --p-textarea-border-color: var(--p-input-border-color);
+  --p-textarea-hover-border-color: var(--p-input-border-color);
+  --p-textarea-focus-border-color: var(--p-input-border-color);
 
-  --owd-textarea-shadow: var(--owd-input-box-shadow);
-  --owd-textarea-hover-ring-shadow: var(--owd-input-box-shadow);
-  --owd-textarea-focus-ring-shadow: var(--owd-input-box-shadow);
+  --p-textarea-shadow: var(--p-input-box-shadow);
+  --p-textarea-hover-ring-shadow: var(--p-input-box-shadow);
+  --p-textarea-focus-ring-shadow: var(--p-input-box-shadow);
 }
 
 .p-textarea {
   border-width: 2px;
   border-style: solid;
-  border-color: var(--owd-inputtext-border-color);
+  border-color: var(--p-inputtext-border-color);
 }

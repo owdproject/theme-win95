@@ -44,13 +44,13 @@ const classes = computed(() => {
   }
 
   &:hover {
-    background: rgb(var(--owd-elevation-inactive));
+    background: rgb(var(--p-elevation-inactive));
   }
 
   &--primary {
     &:hover {
-      background: rgb(var(--owd-elevation-active-background));
-      color: rgb(var(--owd-elevation-active-color)) !important;
+      background: rgb(var(--p-elevation-active-background));
+      color: rgb(var(--p-elevation-active-color)) !important;
     }
   }
 

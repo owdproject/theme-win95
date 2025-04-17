@@ -33,20 +33,20 @@
   min-height: 160px;
   text-align: left;
   cursor: default;
-  border-radius: var(--owd-window-border-radius);
+  border-radius: var(--p-window-border-radius);
 
   :deep(> .p-card) {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: var(--owd-gap);
+    padding: var(--p-gap);
 
     > .p-card-header {
       margin-bottom: 2px;
     }
 
     > .p-card-body {
-      height: calc(100% - var(--owd-windov-nav-height));
+      height: calc(100% - var(--p-windov-nav-height));
 
       > .p-card-content {
         height: 100%;

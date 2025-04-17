@@ -1,14 +1,14 @@
 :root {
-  --owd-tabs-tab-background: transparent;
-  --owd-tabs-tab-hover-border-color: var(--owd-card-border-color-alternative);
+  --p-tabs-tab-background: transparent;
+  --p-tabs-tab-hover-border-color: var(--p-card-border-color-alternative);
 }
 
 .p-tabs {
   .p-tabpanels {
     border-width: 2px;
     border-style: solid;
-    border-color: var(--owd-card-border-color-alternative);
-    box-shadow: var(--owd-card-box-shadow-alternative);
+    border-color: var(--p-card-border-color-alternative);
+    box-shadow: var(--p-card-box-shadow-alternative);
     padding: 18px;
     z-index: 2;
   }
@@ -19,14 +19,14 @@
 
     .p-tab {
       border-width: 2px;
-      border-color: var(--owd-card-border-color-alternative);
-      box-shadow: var(--owd-card-box-shadow-alternative);
+      border-color: var(--p-card-border-color-alternative);
+      box-shadow: var(--p-card-box-shadow-alternative);
       padding: 5px 8px 3px;
       margin: 0 -2px;
       margin-bottom: -4px !important;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      font-size: var(--owd-font-size);
+      font-size: var(--p-font-size);
 
       &-active {
         margin-top: -3px;
@@ -36,11 +36,11 @@
         &:after {
           position: absolute;
           bottom: 0;
-          left: var(--owd-border-width);
-          right: var(--owd-border-width);
+          left: var(--p-border-width);
+          right: var(--p-border-width);
           height: 8px;
           content: '';
-          background: var(--owd-surface-900);
+          background: var(--p-surface-900);
         }
       }
     }

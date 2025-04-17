@@ -74,8 +74,8 @@ function onRootMenuItemClick(listItem) {
 .owd-system-bar__menu {
   position: absolute;
   bottom: 37px;
-  left: var(--owd-border-width);
-  padding: var(--owd-gap);
+  left: var(--p-border-width);
+  padding: var(--p-gap);
   max-height: 80dvh;
   width: 280px;
   cursor: default;
@@ -87,7 +87,7 @@ function onRootMenuItemClick(listItem) {
 
     .owd-system-bar__menu {
       &__title {
-        background: rgb(var(--owd-elevation-inactive));
+        background: rgb(var(--p-elevation-inactive));
         width: 36px;
       }
 

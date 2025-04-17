@@ -68,20 +68,20 @@ function onWindowNavDestroy() {
   align-items: center;
   flex-shrink: 0;
   justify-content: space-between;
-  height: var(--owd-windov-nav-height);
+  height: var(--p-windov-nav-height);
   font-weight: bold;
-  background: rgb(var(--owd-elevation-inactive));
-  color: rgb(var(--owd-theme-color-light));
+  background: rgb(var(--p-elevation-inactive));
+  color: rgb(var(--p-theme-color-light));
 
   &--focused {
-    background: rgb(var(--owd-elevation-active-background));
-    color: rgb(var(--owd-elevation-active-color))
+    background: rgb(var(--p-elevation-active-background));
+    color: rgb(var(--p-elevation-active-color))
   }
 
   &__btn-group {
     display: flex;
-    gap: var(--owd-gap);
-    padding: var(--owd-gap);
+    gap: var(--p-gap);
+    padding: var(--p-gap);
     margin-right: -1px;
   }
 
@@ -89,7 +89,7 @@ function onWindowNavDestroy() {
     display: flex;
     align-items: center;
     padding-left: 6px;
-    gap: var(--owd-gap);
+    gap: var(--p-gap);
     flex-grow: 1;
   }
 

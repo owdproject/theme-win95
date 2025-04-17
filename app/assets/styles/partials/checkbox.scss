@@ -1,22 +1,22 @@
 :root {
-  --owd-checkbox-width: 18px;
-  --owd-checkbox-height: 18px;
+  --p-checkbox-width: 18px;
+  --p-checkbox-height: 18px;
 
-  --owd-inputtext-color: var(--owd-input-color);
-  --owd-checkbox-background: var(--owd-input-backgorund);
-  --owd-checkbox-checked-background: var(--owd-input-backgorund);
-  --owd-checkbox-checked-hover-background: var(--owd-input-backgorund);
-  --owd-checkbox-hover-background: var(--owd-input-backgorund);
+  --p-inputtext-color: var(--p-input-color);
+  --p-checkbox-background: var(--p-input-backgorund);
+  --p-checkbox-checked-background: var(--p-input-backgorund);
+  --p-checkbox-checked-hover-background: var(--p-input-backgorund);
+  --p-checkbox-hover-background: var(--p-input-backgorund);
 
-  --owd-checkbox-border-color: var(--owd-input-border-color);
-  --owd-checkbox-hover-border-color: var(--owd-input-border-color);
-  --owd-checkbox-checked-hover-border-color: var(--owd-input-border-color);
-  --owd-checkbox-checked-border-color: var(--owd-input-border-color);
-  --owd-inputtext-focus-border-color: var(--owd-input-border-color);
+  --p-checkbox-border-color: var(--p-input-border-color);
+  --p-checkbox-hover-border-color: var(--p-input-border-color);
+  --p-checkbox-checked-hover-border-color: var(--p-input-border-color);
+  --p-checkbox-checked-border-color: var(--p-input-border-color);
+  --p-inputtext-focus-border-color: var(--p-input-border-color);
 
-  --owd-checkbox-shadow: var(--owd-input-box-shadow);
-  --owd-inputtext-hover-ring-shadow: var(--owd-input-box-shadow);
-  --owd-inputtext-focus-ring-shadow: var(--owd-input-box-shadow);
+  --p-checkbox-shadow: var(--p-input-box-shadow);
+  --p-inputtext-hover-ring-shadow: var(--p-input-box-shadow);
+  --p-inputtext-focus-ring-shadow: var(--p-input-box-shadow);
 }
 
 .p-checkbox {
@@ -26,7 +26,7 @@
   &-box {
     border-width: 2px;
     border-style: solid;
-    border-color: var(--owd-checkbox-border-color);
+    border-color: var(--p-checkbox-border-color);
   }
 }
 
