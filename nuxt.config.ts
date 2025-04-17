@@ -12,6 +12,17 @@ export default defineNuxtConfig({
 
     imports: {
         dirs: ['composables', 'consts', 'stores', 'utils'],
+        presets: [
+            {
+                from: '@owdproject/core',
+                imports: [
+                    'useAppEntries',
+                    'useApplicationManager',
+                    'useDesktopManager',
+                    'defineDesktopConfig',
+                ]
+            },
+        ]
     },
 
     runtimeConfig: {
