@@ -1,5 +1,19 @@
+<script setup lang="ts">
+const windowContent = inject<WindowContent>('windowContent')
+
+const classes = computed(() => {
+  const list = []
+
+  if (windowContent?.padded) {
+    list.push('p-2')
+  }
+
+  return list
+})
+</script>
+
 <template>
-  <CoreWindowContent>
+  <CoreWindowContent :class="classes">
     <slot />
   </CoreWindowContent>
 </template>
