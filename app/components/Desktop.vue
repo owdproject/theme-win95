@@ -34,11 +34,11 @@ const systemLifecycle = useSystemLifecycle()
 @use '../assets/styles/index.scss';
 
 .owd-desktop {
-  font-family: var(--p-font-family), serif;
+  font-family: var(--owd-font-family), serif;
   font-size: var(--p-font-size);
 
   button {
-    font-family: var(--p-font-family), serif;
+    font-family: var(--owd-font-family), serif;
   }
 
   &__system-bar {

@@ -1,19 +1,19 @@
 <script setup lang="ts">
 defineProps<{
-  applicationsEntries: any
+  applicationsEntries: ApplicationEntryWithInherited[]
   arrow?: boolean
 }>()
 
-function onSystemBarAppClick(entry: ApplicationEntry) {
+function onSystemBarAppClick(entry: ApplicationEntryWithInherited) {
   entry.application.execCommand(entry.command)
 }
 </script>
 
 <template>
   <SystemBarMenuApplicationListItem
-      v-for="applicationEntry of applicationsEntries"
-      :entry="applicationEntry"
+      v-for="entry of applicationsEntries"
+      :entry="entry"
       :arrow="arrow"
-      @click="onSystemBarAppClick(applicationEntry)"
+      @click="onSystemBarAppClick(entry)"
   />
 </template>

@@ -9,12 +9,12 @@
   box-shadow: var(--p-card-box-shadow);
 
   &--border {
-    box-shadow: var(--p-border);
+    box-shadow: var(--owd-border);
   }
 
   &--inset {
     box-shadow: none;
-    border: var(--p-border-width) solid;
-    border-color: rgb(var(--p-theme-color-dark)) rgb(var(--p-theme-color-white)) rgb(var(--p-theme-color-white)) rgb(var(--p-theme-color-dark));
+    border: var(--owd-border-width) solid;
+    border-color: rgb(var(--owd-theme-color-dark)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-dark));
   }
 }

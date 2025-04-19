@@ -36,8 +36,8 @@
         &:after {
           position: absolute;
           bottom: 0;
-          left: var(--p-border-width);
-          right: var(--p-border-width);
+          left: var(--owd-border-width);
+          right: var(--owd-border-width);
           height: 8px;
           content: '';
           background: var(--p-surface-900);

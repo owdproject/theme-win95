@@ -45,8 +45,8 @@ const classes = computed(() => {
 <style scoped lang="scss">
 .owd-desktop__system-bar {
   position: relative;
-  height: var(--p-system-bar-height);
-  padding: var(--p-gap);
+  height: var(--owd-system-bar-height);
+  padding: var(--owd-gap);
 
   :deep(> .p-card-body) {
     height: 100%;
@@ -70,7 +70,7 @@ const classes = computed(() => {
 
           .p-button--system-bar {
             height: 100%;
-            margin-right: var(--p-gap);
+            margin-right: var(--owd-gap);
           }
         }
 

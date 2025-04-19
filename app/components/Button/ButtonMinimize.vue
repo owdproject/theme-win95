@@ -14,7 +14,7 @@
 
   &:before {
     position: absolute;
-    background: rgb(var(--p-theme-color-black));
+    background: rgb(var(--owd-theme-color-black));
     content: "";
   }
 

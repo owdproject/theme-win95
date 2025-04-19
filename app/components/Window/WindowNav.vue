@@ -68,10 +68,10 @@ function onWindowNavDestroy() {
   align-items: center;
   flex-shrink: 0;
   justify-content: space-between;
-  height: var(--p-windov-nav-height);
+  height: var(--owd-windov-nav-height);
   font-weight: bold;
   background: rgb(var(--owd-elevation-inactive));
-  color: rgb(var(--p-theme-color-light));
+  color: rgb(var(--owd-theme-color-light));
 
   &--focused {
     background: rgb(var(--owd-elevation-active-background));
@@ -80,8 +80,8 @@ function onWindowNavDestroy() {
 
   &__btn-group {
     display: flex;
-    gap: var(--p-gap);
-    padding: var(--p-gap);
+    gap: var(--owd-gap);
+    padding: var(--owd-gap);
     margin-right: -1px;
   }
 
@@ -89,7 +89,7 @@ function onWindowNavDestroy() {
     display: flex;
     align-items: center;
     padding-left: 6px;
-    gap: var(--p-gap);
+    gap: var(--owd-gap);
     flex-grow: 1;
   }
 

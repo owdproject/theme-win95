@@ -39,14 +39,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: var(--p-gap);
+    padding: var(--owd-gap);
 
     > .p-card-header {
       margin-bottom: 2px;
     }
 
     > .p-card-body {
-      height: calc(100% - var(--p-windov-nav-height));
+      height: calc(100% - var(--owd-windov-nav-height));
 
       > .p-card-content {
         height: 100%;
