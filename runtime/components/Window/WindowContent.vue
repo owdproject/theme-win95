@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import {inject} from "vue"
+import {computed} from "@vue/reactivity"
+
 const windowContent = inject<WindowContent>('windowContent')
 
 const classes = computed(() => {

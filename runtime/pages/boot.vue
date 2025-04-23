@@ -1,10 +1,6 @@
-<template>
-  <div class="owd-boot">
-    <div class="owd-boot__content" id="owd-boot-content" />
-  </div>
-</template>
-
 <script setup>
+import {onMounted} from "vue"
+
 const bootDisplay = {
   container: null,
   timeout: 0,
@@ -85,6 +81,12 @@ onMounted(() => {
   bootDisplay.setup()
 })
 </script>
+
+<template>
+  <div class="owd-boot">
+    <div class="owd-boot__content" id="owd-boot-content" />
+  </div>
+</template>
 
 <style scoped lang="scss">
 .owd-boot {

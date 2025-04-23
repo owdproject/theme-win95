@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useMagicKeys } from '@vueuse/core'
+import {watch} from "vue"
+import {navigateTo} from "nuxt/app"
 
 const { enter } = useMagicKeys()
 

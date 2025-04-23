@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {inject} from "vue"
+
 const windowController = inject<IWindowController>('windowController')
 
 function onWindowMinimize() {

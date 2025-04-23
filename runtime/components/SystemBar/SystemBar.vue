@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const desktop = useDesktopManager()
+import {useSystemBar} from "../../composables/useSystemBar"
+import {computed} from "@vue/reactivity"
+
 const systemBar = useSystemBar()
 
 const classes = computed(() => {

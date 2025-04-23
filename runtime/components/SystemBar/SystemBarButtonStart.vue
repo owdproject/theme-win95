@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import {useSystemBar} from "../../composables/useSystemBar"
+import {useTemplateRef} from "vue"
+import {onClickOutside} from "@vueuse/core"
+
 const startButtonElement = useTemplateRef('startButtonElement')
 
 const systemBar = useSystemBar()

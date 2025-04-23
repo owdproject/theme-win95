@@ -1,3 +1,9 @@
+import {useApplicationManager} from "@owdproject/core/runtime/composables/useApplicationManager"
+import {useDesktopManager} from "@owdproject/core/runtime/composables/useDesktopManager"
+import {useAppEntries} from "@owdproject/core/runtime/composables/useAppEntries"
+import {useSystemLifecycle} from "../composables/useSystemLifecycle"
+import {ref, computed} from "@vue/reactivity"
+
 export function useSystemBar() {
     const applicationManager = useApplicationManager()
     const desktopManager = useDesktopManager()

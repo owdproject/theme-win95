@@ -1,3 +1,5 @@
+import {useRouter} from "nuxt/app"
+
 const isShuttingDown = ref(false)
 
 export function useSystemLifecycle() {
