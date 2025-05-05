@@ -9,6 +9,11 @@ export default defineNuxtModule({
     async setup(options, nuxt) {
         const {resolve} = createResolver(import.meta.url);
 
+        const desktopConfig = require(resolve('./desktop.config.ts'))
+
+        // assign open web desktop theme base config to runtime config
+        nuxt.options.runtimeConfig.public.desktop = desktopConfig.default
+
         {
 
             // add components

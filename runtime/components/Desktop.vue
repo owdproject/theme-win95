@@ -2,8 +2,6 @@
 import {useDesktopManager} from "@owdproject/core/runtime/composables/useDesktopManager"
 import {useSystemLifecycle} from "../composables/useSystemLifecycle"
 
-import '../../desktop.config'
-
 defineProps<{
   systemBar?: DesktopSystemBarConfig
 }>()
