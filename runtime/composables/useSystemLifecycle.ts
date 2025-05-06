@@ -1,3 +1,6 @@
+import {useRouter} from "nuxt/app"
+import {ref} from "vue"
+
 const isShuttingDown = ref(false)
 
 export function useSystemLifecycle() {

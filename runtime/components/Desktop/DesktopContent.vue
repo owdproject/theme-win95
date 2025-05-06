@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import {useDesktopManager} from "@owdproject/core/runtime/composables/useDesktopManager"
+import {computed} from "@vue/reactivity"
+
 const desktop = useDesktopManager()
 
 const classes = computed(() => {

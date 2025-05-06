@@ -1,12 +1,12 @@
-<template>
-  <div :class="['owd-shutdown', {'owd-shutdown--active': active}]"/>
-</template>
-
 <script setup lang="ts">
 defineProps<{
   active: boolean
 }>()
 </script>
+
+<template>
+  <div :class="['owd-shutdown', {'owd-shutdown--active': active}]"/>
+</template>
 
 <style scoped lang="scss">
 .owd-shutdown {

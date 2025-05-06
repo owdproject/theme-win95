@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import '#/desktop.config'
+import {useDesktopManager} from "@owdproject/core/runtime/composables/useDesktopManager"
+import {useSystemLifecycle} from "../composables/useSystemLifecycle"
 
 defineProps<{
   systemBar?: DesktopSystemBarConfig

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useSystemBar} from "../../composables/useSystemBar"
+
 const systemBar = useSystemBar()
 </script>
 

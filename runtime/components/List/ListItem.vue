@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {computed} from "@vue/reactivity"
+
 const props = defineProps<{
   density?: 'compact'
   image?: string
