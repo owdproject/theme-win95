@@ -1,6 +1,5 @@
 import {defineNuxtModule, createResolver, addComponentsDir, addPlugin, addImportsDir} from '@nuxt/kit'
-import {registerTailwindPath} from "@owdproject/core/runtime/utils/utilsApp";
-import {defineDesktopConfig} from "@owdproject/core/runtime/utils/utilsDesktop"
+import {registerTailwindPath} from "@owdproject/core/runtime/utils/utilApp";
 
 export default defineNuxtModule({
     meta: {
