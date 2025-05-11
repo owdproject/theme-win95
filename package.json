@@ -14,5 +14,8 @@
   "author": {
     "name": "dxlliv",
     "url": "https://github.com/dxlliv"
+  },
+  "peerDependencies": {
+    "@owdproject/core": ">=3.0.0-alpha.9"
   }
 }
