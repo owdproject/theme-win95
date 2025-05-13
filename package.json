@@ -1,10 +1,13 @@
 {
   "name": "@owdproject/theme-win95",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Open Web Desktop theme",
   "homepage": "https://github.com/owdproject/theme-win95#readme",
   "bugs": {
     "url": "https://github.com/owdproject/theme-win95/issues"
+  },
+  "nx": {
+    "name": "theme-win95"
   },
   "repository": {
     "type": "git",
@@ -12,10 +15,10 @@
   },
   "license": "MIT",
   "author": {
-    "name": "dxlliv",
-    "url": "https://github.com/dxlliv"
+    "name": "Open Web Desktop Team",
+    "url": "https://github.com/owdproject"
   },
   "peerDependencies": {
-    "@owdproject/core": ">=3.0.0-alpha.9"
+    "@owdproject/core": "3.1.0"
   }
 }
