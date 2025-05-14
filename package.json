@@ -19,6 +19,6 @@
     "url": "https://github.com/owdproject"
   },
   "peerDependencies": {
-    "@owdproject/core": "3.1.0"
+    "@owdproject/core": "^3.1.0"
   }
 }
