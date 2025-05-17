@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useSystemBar} from "../../../composables/useSystemBar"
+import { useSystemBar } from '../../../composables/useSystemBar'
 
 const systemBar = useSystemBar()
 
@@ -15,12 +15,8 @@ function onRootMenuItemClick(listItem) {
 <template>
   <Card pt:root="p-card--border owd-system-bar__menu">
     <template #content>
-
-      <div class="owd-system-bar__menu__title">
-
-      </div>
+      <div class="owd-system-bar__menu__title"></div>
       <List class="owd-system-bar__menu__list">
-
         <!--
         todo this one day should eventually be refactored using primevue TieredMenu
         <TieredMenu :model="systemBar.menu.value">
@@ -39,35 +35,24 @@ function onRootMenuItemClick(listItem) {
         </TieredMenu>
         -->
 
-        <template
-            v-for="listItem of systemBar.menu.value"
-        >
-
-          <ListDivider
-              v-if="listItem.divider"
-          />
+        <template v-for="listItem of systemBar.menu.value">
+          <ListDivider v-if="listItem.divider" />
 
           <ListItem
-              v-else
-              primary
-              :image="listItem.image"
-              :arrow="!!listItem.menu"
-              @click="onRootMenuItemClick(listItem)"
+            v-else
+            primary
+            :image="listItem.image"
+            :arrow="!!listItem.menu"
+            @click="onRootMenuItemClick(listItem)"
           >
             {{ listItem.label }}
 
-            <SystemBarMenuSheet
-                v-if="listItem.menu"
-            >
-              <SystemBarMenuList
-                  :menu="listItem.menu"
-              />
+            <SystemBarMenuSheet v-if="listItem.menu">
+              <SystemBarMenuList :menu="listItem.menu" />
             </SystemBarMenuSheet>
           </ListItem>
-
         </template>
       </List>
-
     </template>
   </Card>
 </template>

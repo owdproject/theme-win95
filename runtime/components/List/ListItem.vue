@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed} from "@vue/reactivity"
+import { computed } from '@vue/reactivity'
 
 const props = defineProps<{
   density?: 'compact'
@@ -12,7 +12,7 @@ const classes = computed(() => {
   const list = ['owd-list-item']
 
   if (props.primary) {
-    list.push(`owd-list-item--primary`)
+    list.push('owd-list-item--primary')
   }
 
   if (props.density) {
@@ -26,12 +26,12 @@ const classes = computed(() => {
 <template>
   <div :class="classes">
     <slot name="icon">
-      <img v-if="image" :src="image"/>
+      <img v-if="image" :src="image" />
     </slot>
 
-    <slot/>
+    <slot />
 
-    <Icon v-if="arrow" name="mdi:menu-right"/>
+    <Icon v-if="arrow" name="mdi:menu-right" />
   </div>
 </template>
 

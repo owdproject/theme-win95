@@ -1,14 +1,29 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   config?: WindowConfig
   window?: IWindowController
   src: string
+  width: string
+  height: string
+  allow: string
 }>()
 </script>
 
 <template>
-  <Window v-bind="$props">
-    <iframe :src="src" />
+  <Window :config="config" :window="window">
+    <template #nav-prepend>
+      <slot name="nav-prepend" />
+    </template>
+    <template #nav-append>
+      <slot name="nav-append" />
+    </template>
+    <iframe
+      :class="{ 'pointer-events-none': !window.state.focused }"
+      :src="src"
+      :width="width"
+      :height="height"
+      :allow="allow"
+    />
   </Window>
 </template>
 
@@ -19,7 +34,5 @@ const props = defineProps<{
 
 iframe {
   border: 0;
-  width: 100%;
-  height: 100%;
 }
 </style>

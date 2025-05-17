@@ -1,54 +1,90 @@
 <script setup>
-import {onMounted} from "vue"
+import { onMounted } from 'vue'
 
 const bootDisplay = {
   container: null,
   timeout: 0,
   screenplay: [
-    {delay: 500, type: 'writeln', text: 'Award Modular BIOS v6.00PG'},
-    {delay: 0, type: 'writeln', text: 'ACPI BIOS Revision 1.0A'},
-    {delay: 0, type: 'writeln', text: 'ASUS P4P800 Deluxe Series BIOS'},
-    {delay: 0, type: 'writeln', text: 'Checking Hardware...'},
-    {delay: 1000, type: 'clear'},
+    { delay: 500, type: 'writeln', text: 'Award Modular BIOS v6.00PG' },
+    { delay: 0, type: 'writeln', text: 'ACPI BIOS Revision 1.0A' },
+    { delay: 0, type: 'writeln', text: 'ASUS P4P800 Deluxe Series BIOS' },
+    { delay: 0, type: 'writeln', text: 'Checking Hardware...' },
+    { delay: 1000, type: 'clear' },
 
-    {delay: 500, type: 'writeln', text: 'Intel(R) Pentium(R) 4 CPU 3.00GHz'},
-    {delay: 0, type: 'writeln', text: '640 KB System RAM Passed'},
-    {delay: 0, type: 'writeln', text: '128 MB Video RAM Passed'},
-    {delay: 500, type: 'writeln', text: 'PCI device listing...'},
-    {delay: 250, type: 'writeln', text: '  Bus:00, Device:01, Function:00 - VGA Compatible Controller'},
-    {delay: 250, type: 'writeln', text: '  Bus:00, Device:02, Function:00 - Ethernet Controller'},
-    {delay: 1000, type: 'clear'},
+    {
+      delay: 500,
+      type: 'writeln',
+      text: 'Intel(R) Pentium(R) 4 CPU 3.00GHz',
+    },
+    { delay: 0, type: 'writeln', text: '640 KB System RAM Passed' },
+    { delay: 0, type: 'writeln', text: '128 MB Video RAM Passed' },
+    { delay: 500, type: 'writeln', text: 'PCI device listing...' },
+    {
+      delay: 250,
+      type: 'writeln',
+      text: '  Bus:00, Device:01, Function:00 - VGA Compatible Controller',
+    },
+    {
+      delay: 250,
+      type: 'writeln',
+      text: '  Bus:00, Device:02, Function:00 - Ethernet Controller',
+    },
+    { delay: 1000, type: 'clear' },
 
-    {delay: 500, type: 'writeln', text: 'Detecting IDE Primary Master... IDE Hard Drive'},
-    {delay: 500, type: 'writeln', text: 'Detecting IDE Primary Slave... None'},
-    {delay: 500, type: 'writeln', text: 'Detecting IDE Secondary Master... CD-ROM'},
-    {delay: 500, type: 'writeln', text: 'Detecting IDE Secondary Slave... None'},
-    {delay: 1500, type: 'writeln', text: '&nbsp;'},
+    {
+      delay: 500,
+      type: 'writeln',
+      text: 'Detecting IDE Primary Master... IDE Hard Drive',
+    },
+    {
+      delay: 500,
+      type: 'writeln',
+      text: 'Detecting IDE Primary Slave... None',
+    },
+    {
+      delay: 500,
+      type: 'writeln',
+      text: 'Detecting IDE Secondary Master... CD-ROM',
+    },
+    {
+      delay: 500,
+      type: 'writeln',
+      text: 'Detecting IDE Secondary Slave... None',
+    },
+    { delay: 1500, type: 'writeln', text: '&nbsp;' },
 
-    {delay: 1500, type: 'writeln', text: 'LSI Logic MegaRAID BIOS'},
-    {delay: 0, type: 'writeln', text: 'Initializing SCSI Controllers...'},
-    {delay: 1000, type: 'clear'},
+    { delay: 1500, type: 'writeln', text: 'LSI Logic MegaRAID BIOS' },
+    { delay: 0, type: 'writeln', text: 'Initializing SCSI Controllers...' },
+    { delay: 1000, type: 'clear' },
 
-    {delay: 500, type: 'writeln', text: 'Phoenix - AwardBIOS CMOS Setup Utility'},
-    {delay: 0, type: 'writeln', text: 'Copyright (C) 1984-2002 Phoenix Technologies Ltd.'},
-    {delay: 1000, type: 'writeln', text: 'Press DEL to enter SETUP'},
-    {delay: 0, type: 'writeln', text: 'Press F12 for Boot Menu'},
-    {delay: 1500, type: 'writeln', text: '&nbsp;'},
-    {delay: 1500, type: 'writeln', text: 'Booting from Hard Disk...'},
-    {delay: 2000, type: 'redirect'},
+    {
+      delay: 500,
+      type: 'writeln',
+      text: 'Phoenix - AwardBIOS CMOS Setup Utility',
+    },
+    {
+      delay: 0,
+      type: 'writeln',
+      text: 'Copyright (C) 1984-2002 Phoenix Technologies Ltd.',
+    },
+    { delay: 1000, type: 'writeln', text: 'Press DEL to enter SETUP' },
+    { delay: 0, type: 'writeln', text: 'Press F12 for Boot Menu' },
+    { delay: 1500, type: 'writeln', text: '&nbsp;' },
+    { delay: 1500, type: 'writeln', text: 'Booting from Hard Disk...' },
+    { delay: 2000, type: 'redirect' },
   ],
   setup: function () {
     this.container = document.getElementById('owd-boot-content')
     this.initialize()
   },
   initialize: function () {
-    this.screenplay.forEach(action => this.run(action))
+    this.screenplay.forEach((action) => this.run(action))
   },
   run: function (action) {
     this.timeout += action.delay
 
     setTimeout(() => {
-      switch(action.type) {
+      switch (action.type) {
         case 'writeln':
           this.writeln(action.text)
           break
@@ -115,7 +151,7 @@ onMounted(() => {
   font-size: 14px;
   overflow-y: auto;
   color: #cccccc;
-  font-family: "Courier New", Courier, monospace, FreeMono;
+  font-family: 'Courier New', Courier, monospace, FreeMono;
   white-space: pre-wrap;
 }
 </style>

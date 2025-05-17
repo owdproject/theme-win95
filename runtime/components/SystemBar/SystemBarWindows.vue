@@ -1,27 +1,32 @@
 <script setup lang="ts">
-import {useSystemBar} from "../../composables/useSystemBar"
+import { useSystemBar } from '../../composables/useSystemBar'
 
 const systemBar = useSystemBar()
 </script>
 
 <template>
   <div
-      v-if="systemBar.windows.value.length > 0"
-      class="owd-system-bar__windows"
+    v-if="systemBar.windows.value.length > 0"
+    class="owd-system-bar__windows"
   >
     <Button
-        v-for="[windowId, window] of systemBar.windows.value"
-        :key="window.state.id"
-        :class="['p-button--system-bar', {'p-button--active': window.state.active}]"
-        @pointerdown.self="window.actions.toggleMinimize"
+      v-for="[windowId, window] of systemBar.windows.value"
+      :key="window.state.id"
+      :class="[
+        'p-button--system-bar',
+        { 'p-button--active': window.state.active },
+      ]"
+      @pointerdown.self="window.actions.toggleMinimize"
     >
       <span v-text="window.title" />
 
+      <!--
       <component
           v-show="window.state.active"
           :is="window.config.component"
           :window="window"
       />
+      -->
     </Button>
   </div>
 </template>

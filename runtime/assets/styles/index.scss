@@ -1,5 +1,5 @@
-@use "./fonts";
-@use "./variants/default/variables";
+@use './fonts';
+@use './variants/default/variables';
 
 @use './partials/avatar.scss';
 @use './partials/button.scss';
@@ -16,13 +16,26 @@
 @use './partials/textarea.scss';
 
 :root {
-  --owd-font-family: ms-sans-serif, "sans-serif";
+  --owd-font-family: ms-sans-serif, 'sans-serif';
   --p-font-size: 14px;
 
   --owd-windov-nav-height: 26px;
   --owd-system-bar-height: 40px;
 
-  --owd-border: rgb(var(--owd-theme-color-white)) var(--owd-border-width) var(--owd-border-width) 0 0 inset, rgb(var(--owd-theme-color-dark)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0px inset, rgb(var(--owd-theme-color-black)) var(--owd-border-width) var(--owd-border-width) 0 0, rgb(var(--owd-theme-color-grey)) 0 calc(var(--owd-border-width) * -1) 0 0, rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0, rgb(var(--owd-theme-color-black)) 0 var(--owd-border-width) 0 0, rgb(var(--owd-theme-color-black)) var(--owd-border-width) 0 0, rgb(var(--owd-theme-color-grey)) 0 calc(var(--owd-border-width) * -1) 0 0, rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) 0 0 0;
+  --owd-border:
+    rgb(var(--owd-theme-color-white)) var(--owd-border-width)
+      var(--owd-border-width) 0 0 inset,
+    rgb(var(--owd-theme-color-dark)) calc(var(--owd-border-width) * -1)
+      calc(var(--owd-border-width) * -1) 0 0px inset,
+    rgb(var(--owd-theme-color-black)) var(--owd-border-width)
+      var(--owd-border-width) 0 0,
+    rgb(var(--owd-theme-color-grey)) 0 calc(var(--owd-border-width) * -1) 0 0,
+    rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1)
+      calc(var(--owd-border-width) * -1) 0 0,
+    rgb(var(--owd-theme-color-black)) 0 var(--owd-border-width) 0 0,
+    rgb(var(--owd-theme-color-black)) var(--owd-border-width) 0 0,
+    rgb(var(--owd-theme-color-grey)) 0 calc(var(--owd-border-width) * -1) 0 0,
+    rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) 0 0 0;
   --owd-border-width: 2px;
 
   --owd-gap: 4px;
@@ -41,12 +54,26 @@
   --p-surface-900: rgb(var(--owd-theme-color-light));
   --p-input-color: black;
   --p-input-backgorund: white;
-  --p-input-border-color: rgb(var(--owd-theme-color-dark)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-dark));
-  --p-input-box-shadow: inset 0 2px 0 0 rgb(var(--owd-theme-color-black)), inset -2px 0 0 0 rgb(var(--owd-theme-color-super-light)), inset 0 -2px 0 0 rgb(var(--owd-theme-color-super-light)), inset 2px 0 0 0 rgb(var(--owd-theme-color-black));
+  --p-input-border-color: rgb(var(--owd-theme-color-dark))
+    rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white))
+    rgb(var(--owd-theme-color-dark));
+  --p-input-box-shadow:
+    inset 0 2px 0 0 rgb(var(--owd-theme-color-black)),
+    inset -2px 0 0 0 rgb(var(--owd-theme-color-super-light)),
+    inset 0 -2px 0 0 rgb(var(--owd-theme-color-super-light)),
+    inset 2px 0 0 0 rgb(var(--owd-theme-color-black));
 
   --p-card-color: rgb(var(--owd-theme-color-black));
-  --p-card-border-color: rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-white));
-  --p-card-box-shadow: rgb(var(--owd-theme-color-dark)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0 inset;
-  --p-card-border-color-alternative: rgb(var(--owd-theme-color-lightgrey)) rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-lightgrey));
-  --p-card-box-shadow-alternative: rgb(254, 254, 254) 1px 1px 0px 1px inset, rgb(132, 133, 132) -1px -1px 0px 1px inset;
+  --p-card-border-color: rgb(var(--owd-theme-color-white))
+    rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-black))
+    rgb(var(--owd-theme-color-white));
+  --p-card-box-shadow: rgb(var(--owd-theme-color-dark))
+    calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0
+    inset;
+  --p-card-border-color-alternative: rgb(var(--owd-theme-color-lightgrey))
+    rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-black))
+    rgb(var(--owd-theme-color-lightgrey));
+  --p-card-box-shadow-alternative:
+    rgb(254, 254, 254) 1px 1px 0px 1px inset,
+    rgb(132, 133, 132) -1px -1px 0px 1px inset;
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {useSystemBar} from "../../composables/useSystemBar"
-import {computed} from "@vue/reactivity"
+import { useSystemBar } from '../../composables/useSystemBar'
+import { computed } from '@vue/reactivity'
 
 const systemBar = useSystemBar()
 
@@ -9,8 +9,8 @@ const classes = computed(() => {
 
   if (systemBar.config?.position) {
     list.push(
-        'owd-desktop__system-bar--position',
-        `owd-desktop__system-bar--position-${systemBar.config.position}`
+      'owd-desktop__system-bar--position',
+      `owd-desktop__system-bar--position-${systemBar.config.position}`,
     )
   }
 
@@ -21,25 +21,21 @@ const classes = computed(() => {
 <template>
   <Card :class="classes">
     <template #content>
-
       <div>
-        <SystemBarButtonStart
-            v-if="systemBar.config?.startButton"
-        />
+        <SystemBarButtonStart v-if="systemBar.config?.startButton" />
 
-        <Divider layout="vertical" type="solid"/>
+        <Divider layout="vertical" type="solid" />
 
-        <SystemBarWindows/>
+        <SystemBarWindows />
       </div>
 
       <div>
         <Card class="p-card--inset">
           <template #content>
-            <CoreTime/>
+            <CoreTime />
           </template>
         </Card>
       </div>
-
     </template>
   </Card>
 </template>
@@ -59,7 +55,6 @@ const classes = computed(() => {
       height: 100%;
 
       > div {
-
         // system bar start button + windows
 
         &:nth-child(1) {
@@ -104,7 +99,8 @@ const classes = computed(() => {
   &--position {
     position: fixed;
 
-    &-top, &-bottom {
+    &-top,
+    &-bottom {
       width: 100%;
     }
 

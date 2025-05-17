@@ -9,11 +9,9 @@ defineProps<{
 
 <template>
   <SystemBarMenuApplicationList
-      v-if="menu.type === 'applicationList'"
-      :applications-entries="menu.list"
+    v-if="menu.type === 'applicationList'"
+    :applications-entries="menu.list"
   />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {useDesktopManager} from "@owdproject/core/runtime/composables/useDesktopManager"
-import {useSystemLifecycle} from "../composables/useSystemLifecycle"
+import { useDesktopManager } from '@owdproject/core/runtime/composables/useDesktopManager'
+import { useSystemLifecycle } from '../composables/useSystemLifecycle'
 
 defineProps<{
   systemBar?: DesktopSystemBarConfig
@@ -12,22 +12,16 @@ const systemLifecycle = useSystemLifecycle()
 
 <template>
   <CoreDesktop v-bind="$props">
-
-    <Background/>
+    <Background />
 
     <DesktopContent>
-      <slot/>
+      <slot />
     </DesktopContent>
 
-    <SystemBar
-        v-if="desktop.config.systemBar?.enabled"
-    />
-    <CoreApplicationRender
-        v-else
-    />
+    <SystemBar v-if="desktop.config.systemBar?.enabled" />
+    <CoreApplicationRender />
 
-    <DesktopShutdown :active="systemLifecycle.isShuttingDown.value"/>
-
+    <DesktopShutdown :active="systemLifecycle.isShuttingDown.value" />
   </CoreDesktop>
 </template>
 

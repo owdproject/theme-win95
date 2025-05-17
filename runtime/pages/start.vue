@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { useMagicKeys } from '@vueuse/core'
-import {watch} from "vue"
-import {navigateTo} from "nuxt/app"
+import { watch } from 'vue'
+import { navigateTo } from 'nuxt/app'
 
 const { enter } = useMagicKeys()
 
 watch(enter, (v) => {
-  if (v)
-    navigateTo('/boot')
+  if (v) navigateTo('/boot')
 })
 </script>
 

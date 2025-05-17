@@ -29,10 +29,8 @@ This theme for Open Web Desktop recreates the old fashioned Windows 95 UI.
     ```typescript
     // owd.config.ts
     export default defineDesktopConfig({
-        theme: '@owdproject/theme-win95',
-        apps: [
-            '@owdproject/app-about',
-        ]
+      theme: '@owdproject/theme-win95',
+      apps: ['@owdproject/app-about'],
     })
     ```
 

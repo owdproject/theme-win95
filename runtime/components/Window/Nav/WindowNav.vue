@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {inject} from "vue"
+import { inject } from 'vue'
 
 const windowController = inject<IWindowController>('windowController')
 
@@ -23,44 +23,35 @@ function onWindowNavDestroy() {
 </script>
 
 <template>
-  <CoreWindowNav
-      @dblclick="onWindowMaximize"
-  >
-
+  <CoreWindowNav @dblclick="onWindowMaximize">
     <WindowNavIcon
-        v-if="windowController?.icon"
-        :icon="windowController.icon"
+      v-if="windowController?.icon"
+      :icon="windowController.icon"
     />
 
-    <div
-        v-if="windowController?.title"
-        class="owd-window-nav__title"
-    >
+    <div v-if="windowController?.title" class="owd-window-nav__title">
       <div
-          class="owd-window-nav__title-inner truncate"
-          v-text="windowController?.title"
+        class="owd-window-nav__title-inner truncate"
+        v-text="windowController?.title"
       />
     </div>
 
     <div class="owd-window-nav__btn-group owd-window-nav__btn-group--append">
-
-      <slot name="append"/>
+      <slot name="append" />
 
       <ButtonMinimize
-          v-if="!windowController?.instanced || windowController?.isMinimizable"
-          @click="onWindowMinimize"
+        v-if="!windowController?.instanced || windowController?.isMinimizable"
+        @click="onWindowMinimize"
       />
       <ButtonMaximize
-          v-if="windowController?.isMaximizable"
-          @click="onWindowMaximize"
+        v-if="windowController?.isMaximizable"
+        @click="onWindowMaximize"
       />
       <ButtonClose
-          v-if="!windowController?.instanced || windowController?.isDestroyable"
-          @click="onWindowNavDestroy"
+        v-if="!windowController?.instanced || windowController?.isDestroyable"
+        @click="onWindowNavDestroy"
       />
-
     </div>
-
   </CoreWindowNav>
 </template>
 
@@ -77,7 +68,7 @@ function onWindowNavDestroy() {
 
   &--focused {
     background: rgb(var(--owd-elevation-active-background));
-    color: rgb(var(--owd-elevation-active-color))
+    color: rgb(var(--owd-elevation-active-color));
   }
 
   &__btn-group {

@@ -19,7 +19,13 @@ $win95-img-resizer: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA
   border-left: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
   border-right: var(--owd-border-width) solid $win95-ui-main-color;
   border-bottom: var(--owd-border-width) solid $win95-ui-main-color;
-  box-shadow: -1px -1px 0 $win95-ui-inner-shadow-color, -1px 0 0 $win95-ui-inner-shadow-color, 0 -1px 0 0 $win95-ui-inner-shadow-color, 1px 0 0 $win95-ui-highlight-color, 1px 1px 0 $win95-ui-highlight-color, 0 1px 0 $win95-ui-highlight-color;
+  box-shadow:
+    -1px -1px 0 $win95-ui-inner-shadow-color,
+    -1px 0 0 $win95-ui-inner-shadow-color,
+    0 -1px 0 0 $win95-ui-inner-shadow-color,
+    1px 0 0 $win95-ui-highlight-color,
+    1px 1px 0 $win95-ui-highlight-color,
+    0 1px 0 $win95-ui-highlight-color;
 }
 
 @mixin win95-emboss-border {
@@ -27,7 +33,9 @@ $win95-img-resizer: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA
   border-left: var(--owd-border-width) solid $win95-ui-main-color;
   border-right: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
   border-bottom: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
-  box-shadow: inset 1px 1px 0 0 $win95-ui-highlight-color, inset -1px -1px 0 0 $win95-ui-inner-shadow-color;
+  box-shadow:
+    inset 1px 1px 0 0 $win95-ui-highlight-color,
+    inset -1px -1px 0 0 $win95-ui-inner-shadow-color;
 }
 
 @mixin win95-depressed-border {
@@ -35,14 +43,20 @@ $win95-img-resizer: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA
   border-left: var(--owd-border-width) solid $win95-ui-outer-shadow-color;
   border-bottom: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
   border-right: var(--owd-border-width) solid $win95-ui-inner-shadow-color;
-  box-shadow: inset 1px 1px 0 0 $win95-ui-inner-shadow-color, 1px 1px 0 0 $win95-ui-outer-shadow-color, 1px 0 0 0 $win95-ui-outer-shadow-color, 0 1px 0 0 $win95-ui-outer-shadow-color;
+  box-shadow:
+    inset 1px 1px 0 0 $win95-ui-inner-shadow-color,
+    1px 1px 0 0 $win95-ui-outer-shadow-color,
+    1px 0 0 0 $win95-ui-outer-shadow-color,
+    0 1px 0 0 $win95-ui-outer-shadow-color;
 }
 
 body {
   background-color: $win95-ui-main-color;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -138,10 +152,18 @@ body {
     background-image: url($win95-img-down-arrow);
   }
 
-  &:horizontal:increment:start { display: none; }
-  &:horizontal:decrement:end { display: none; }
-  &:vertical:increment:start { display: none; }
-  &:vertical:decrement:end { display: none; }
+  &:horizontal:increment:start {
+    display: none;
+  }
+  &:horizontal:decrement:end {
+    display: none;
+  }
+  &:vertical:increment:start {
+    display: none;
+  }
+  &:vertical:decrement:end {
+    display: none;
+  }
 
   &:active {
     border-top: var(--owd-border-width) solid $win95-ui-inner-shadow-color;

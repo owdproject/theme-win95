@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div :class="['owd-shutdown', {'owd-shutdown--active': active}]"/>
+  <div :class="['owd-shutdown', { 'owd-shutdown--active': active }]" />
 </template>
 
 <style scoped lang="scss">

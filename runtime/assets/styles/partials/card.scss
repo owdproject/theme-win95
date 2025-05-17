@@ -1,5 +1,4 @@
 :root {
-
 }
 
 .p-card {
@@ -15,6 +14,8 @@
   &--inset {
     box-shadow: none;
     border: var(--owd-border-width) solid;
-    border-color: rgb(var(--owd-theme-color-dark)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-dark));
+    border-color: rgb(var(--owd-theme-color-dark))
+      rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white))
+      rgb(var(--owd-theme-color-dark));
   }
 }

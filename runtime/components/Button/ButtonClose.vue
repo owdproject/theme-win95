@@ -15,10 +15,11 @@
   transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
   position: relative;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     position: absolute;
     background: rgb(var(--owd-theme-color-black));
-    content: "";
+    content: '';
   }
 
   &:before {

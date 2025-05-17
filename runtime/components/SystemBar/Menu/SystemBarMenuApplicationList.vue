@@ -11,9 +11,9 @@ function onSystemBarAppClick(entry: ApplicationEntryWithInherited) {
 
 <template>
   <SystemBarMenuApplicationListItem
-      v-for="entry of applicationsEntries"
-      :entry="entry"
-      :arrow="arrow"
-      @click="onSystemBarAppClick(entry)"
+    v-for="entry of applicationsEntries"
+    :entry="entry"
+    :arrow="arrow"
+    @click="onSystemBarAppClick(entry)"
   />
 </template>

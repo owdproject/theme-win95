@@ -4,7 +4,7 @@
   --p-button-primary-active-background: var(--p-button-primary-background);
   --p-button-primary-hover-background: var(--p-button-primary-background);
 
-  --p-button-primary-border-color: var(--p-card-border-color)
+  --p-button-primary-border-color: var(--p-card-border-color);
 }
 
 .p-button {
@@ -28,14 +28,21 @@
     content: '';
   }
 
-  &:not([disabled]):active, &:not([disabled]).p-button--active {
+  &:not([disabled]):active,
+  &:not([disabled]).p-button--active {
     & > span {
       font-weight: bold;
     }
 
     &:before {
-      border-color: rgb(var(--owd-theme-color-black)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-black));
-      box-shadow: rgb(var(--owd-theme-color-dark)) var(--owd-border-width) var(--owd-border-width) 0 0 inset, rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0 inset;
+      border-color: rgb(var(--owd-theme-color-black))
+        rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white))
+        rgb(var(--owd-theme-color-black));
+      box-shadow:
+        rgb(var(--owd-theme-color-dark)) var(--owd-border-width)
+          var(--owd-border-width) 0 0 inset,
+        rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1)
+          calc(var(--owd-border-width) * -1) 0 0 inset;
     }
 
     :deep(span .owd-button__icon) {
@@ -76,7 +83,7 @@
     height: 40px;
   }
 
-  &> .iconify {
+  & > .iconify {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -92,7 +99,8 @@
   }
 
   &--system-bar {
-    &:active, &.p-button--active {
+    &:active,
+    &.p-button--active {
       > span {
         position: relative;
         pointer-events: none;
@@ -100,8 +108,18 @@
       }
 
       &:before {
-        background: repeating-conic-gradient(rgb(var(--owd-theme-color-grey)) 0% 25%, rgb(var(--owd-theme-color-white)) 25% 50%) 0 0 / calc(var(--owd-border-width) * 2) calc(var(--owd-border-width) * 2);
-        box-shadow: rgb(var(--owd-theme-color-dark)) var(--owd-border-width) var(--owd-border-width) 0 0 inset, rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1) calc(var(--owd-border-width) * -1) 0 0 inset, rgb(var(--owd-theme-color-white)) 0 2px 0 0 inset;
+        background: repeating-conic-gradient(
+            rgb(var(--owd-theme-color-grey)) 0% 25%,
+            rgb(var(--owd-theme-color-white)) 25% 50%
+          )
+          0 0 / calc(var(--owd-border-width) * 2)
+          calc(var(--owd-border-width) * 2);
+        box-shadow:
+          rgb(var(--owd-theme-color-dark)) var(--owd-border-width)
+            var(--owd-border-width) 0 0 inset,
+          rgb(var(--owd-theme-color-grey)) calc(var(--owd-border-width) * -1)
+            calc(var(--owd-border-width) * -1) 0 0 inset,
+          rgb(var(--owd-theme-color-white)) 0 2px 0 0 inset;
       }
     }
   }

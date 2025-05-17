@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {useSystemBar} from "../../composables/useSystemBar"
-import {useTemplateRef} from "vue"
-import {onClickOutside} from "@vueuse/core"
+import { useSystemBar } from '../../composables/useSystemBar'
+import { useTemplateRef } from 'vue'
+import { onClickOutside } from '@vueuse/core'
 
 const startButtonElement = useTemplateRef('startButtonElement')
 
@@ -20,20 +20,23 @@ onClickOutside(startButtonElement, () => closeApplicationMenu())
 
 <template>
   <Button
-      class="owd-button__system-bar-start"
-      ref="startButtonElement"
-      aria-haspopup="true"
-      aria-controls="system-bar__menu"
-      :pt:root="['p-button__system-bar p-button__system-bar-start', {'p-button--active': systemBar.enabled.value}]"
-      @pointerdown.self="toggleApplicationMenu"
+    class="owd-button__system-bar-start"
+    ref="startButtonElement"
+    aria-haspopup="true"
+    aria-controls="system-bar__menu"
+    :pt:root="[
+      'p-button__system-bar p-button__system-bar-start',
+      { 'p-button--active': systemBar.enabled.value },
+    ]"
+    @pointerdown.self="toggleApplicationMenu"
   >
     <div class="p-button__system-bar-start__icon" />
-    {{$t('systemBar.start.button.label')}}
+    {{ $t('systemBar.start.button.label') }}
   </Button>
   <SystemBarMenu
-      v-if="systemBar.enabled.value"
-      id="system-bar__menu"
-      @close="closeApplicationMenu"
+    v-if="systemBar.enabled.value"
+    id="system-bar__menu"
+    @close="closeApplicationMenu"
   />
 </template>
 

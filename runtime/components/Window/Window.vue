@@ -3,22 +3,18 @@
     <Card pt:root="p-card--border">
       <template #header>
         <WindowNav>
-
           <template v-slot:prepend>
-            <slot name="nav-prepend"/>
+            <slot name="nav-prepend" />
           </template>
 
           <template v-slot:append>
-            <slot name="nav-append"/>
+            <slot name="nav-append" />
           </template>
-
         </WindowNav>
       </template>
       <template #content>
         <WindowContent>
-
-          <slot/>
-
+          <slot />
         </WindowContent>
       </template>
     </Card>

@@ -7,11 +7,11 @@ defineProps<{
 
 <template>
   <SystemBarMenuListItem
-      class="owd-system-bar__menu__item"
-      primary
-      density="compact"
-      :arrow="arrow"
-      close-on-click
+    class="owd-system-bar__menu__item"
+    primary
+    density="compact"
+    :arrow="arrow"
+    close-on-click
   >
     <div class="flex">
       <div>

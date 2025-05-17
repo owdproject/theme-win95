@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useSystemBar} from "../../../composables/useSystemBar"
+import { useSystemBar } from '../../../composables/useSystemBar'
 
 const props = defineProps<{
   closeOnClick?: boolean
@@ -20,6 +20,4 @@ function onListClick() {
   </ListItem>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

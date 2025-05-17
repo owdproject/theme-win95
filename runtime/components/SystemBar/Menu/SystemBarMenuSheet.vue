@@ -1,11 +1,9 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Card class="p-card--border">
     <template #content>
-      <slot/>
+      <slot />
     </template>
   </Card>
 </template>

@@ -1,0 +1,17 @@
+{
+  "name": "owd-app-template",
+  "version": "0.0.1",
+  "description": "Template App for your Open Web Desktop client",
+  "keywords": [
+    "owd-client",
+    "owd-apps",
+    "owd-modules"
+  ],
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/owdproject/app-template",
+  "author": {
+    "name": "Open Web Desktop Team",
+    "url": "https://github.com/owdproject"
+  }
+}
