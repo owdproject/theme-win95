@@ -19,6 +19,7 @@ function onSystemBarAppClick(entry: ApplicationEntryWithInherited) {
     />
   </template>
   <div
+    v-else
     class="text-center py-2"
     v-text="$t('systemBar.applicationList.empty')"
   />
