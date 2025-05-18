@@ -1,9 +1,9 @@
 <p align="center">
   <img width="160" height="160" src="https://avatars.githubusercontent.com/u/65117737?s=160&v=4" />
 </p>
-<h1 align="center">Windows 95 Theme</h1>
+<h1 align="center">Win95 Theme</h1>
 <h3 align="center">
-  Windows 95 Theme for your Open Web Desktop client.
+  Windows 95 Theme for Open Web Desktop.
 </h3>
 
 ## Overview
@@ -12,27 +12,28 @@ This theme for Open Web Desktop recreates the old fashioned Windows 95 UI.
 
 ## Installation
 
-1.  Navigate to your client folder in your terminal:
+```bash
+owd install-theme @owdproject/theme-win95
+```
 
-    ```bash
-    cd owd-client
-    ```
+## Usage
 
-2.  Install the desktop module using npm or yarn:
+#### Available configuration
 
-    ```bash
-    npm install @owdproject/theme-win95
-    ```
+You could set this configuration in `/desktop/owd.config.ts`:
 
-3.  Register the application in your desktop configuration file:
-
-    ```typescript
-    // owd.config.ts
-    export default defineDesktopConfig({
-      theme: '@owdproject/theme-win95',
-      apps: ['@owdproject/app-about'],
-    })
-    ```
+```js
+export default defineDesktopConfig({
+  theme: '@owdproject/theme-win95',
+  desktop: {
+    systemBar: {
+      enabled: true,
+      startButton: true,
+      position: 'bottom'
+    }
+  }
+})
+```
 
 ## License
 
