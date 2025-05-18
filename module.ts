@@ -3,27 +3,37 @@ import {
   createResolver,
   addComponentsDir,
   installModule,
-  addImportsDir,
+  addImportsDir
 } from '@nuxt/kit'
 import { registerTailwindPath } from '@owdproject/core/runtime/utils/utilApp'
+import deepMerge from 'deepmerge'
 
 export default defineNuxtModule({
   meta: {
     name: 'owd-theme-win95',
+    configKey: 'desktop'
+  },
+  defaults: {
+    systemBar: {
+      enabled: true,
+      position: 'bottom',
+      startButton: true
+    }
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    const desktopConfig = require(resolve('./desktop.config.ts'))
-
     // assign open web desktop theme base config to runtime config
-    nuxt.options.runtimeConfig.public.desktop = desktopConfig.default
+    nuxt.options.runtimeConfig.public.desktop = deepMerge(
+      options,
+      nuxt.options.runtimeConfig.public.desktop
+    )
 
     {
       // add components
 
       addComponentsDir({
-        path: resolve('./runtime/components'),
+        path: resolve('./runtime/components')
       })
     }
 
@@ -32,7 +42,7 @@ export default defineNuxtModule({
 
       registerTailwindPath(
         nuxt,
-        resolve('./runtime/components/**/*.{vue,mjs,ts}'),
+        resolve('./runtime/components/**/*.{vue,mjs,ts}')
       )
     }
 
@@ -46,9 +56,9 @@ export default defineNuxtModule({
           locales: [
             {
               code: 'en',
-              file: 'locales/en.ts',
-            },
-          ],
+              file: 'locales/en.ts'
+            }
+          ]
         })
       })
     }
