@@ -18,8 +18,8 @@ const systemLifecycle = useSystemLifecycle()
       <slot />
     </DesktopContent>
 
-    <SystemBar v-if="desktop.config.systemBar?.enabled" />
     <CoreApplicationRender />
+    <SystemBar v-if="desktop.config.systemBar?.enabled" />
 
     <DesktopShutdown :active="systemLifecycle.isShuttingDown.value" />
   </CoreDesktop>

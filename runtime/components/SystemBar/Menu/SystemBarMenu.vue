@@ -66,7 +66,6 @@ function onRootMenuItemClick(listItem) {
   max-height: 80dvh;
   width: 280px;
   cursor: default;
-  z-index: 99999999;
 
   :deep(> .p-card-body > .p-card-content) {
     display: flex;
