@@ -1,6 +1,6 @@
 import { useApplicationManager } from '@owdproject/core/runtime/composables/useApplicationManager'
 import { useDesktopManager } from '@owdproject/core/runtime/composables/useDesktopManager'
-import { useAppEntries } from '@owdproject/core/runtime/composables/useAppEntries'
+import { useApplicationEntries } from '@owdproject/core/runtime/composables/useApplicationEntries'
 import { useSystemLifecycle } from '../composables/useSystemLifecycle'
 import { ref, computed } from '@vue/reactivity'
 
@@ -17,7 +17,7 @@ export function useSystemBar() {
     () => applicationManager.windowsOpened,
   )
 
-  const appEntries = useAppEntries()
+  const appEntries = useApplicationEntries()
   const appEntriesSortedByTitle = appEntries.sortedAppEntries('title')
 
   const menu = computed(() => {
