@@ -10,10 +10,16 @@ function onSystemBarAppClick(entry: ApplicationEntryWithInherited) {
 </script>
 
 <template>
-  <SystemBarMenuApplicationListItem
-    v-for="entry of applicationsEntries"
-    :entry="entry"
-    :arrow="arrow"
-    @click="onSystemBarAppClick(entry)"
+  <template v-if="applicationsEntries.length > 0">
+    <SystemBarMenuApplicationListItem
+      v-for="entry of applicationsEntries"
+      :entry="entry"
+      :arrow="arrow"
+      @click="onSystemBarAppClick(entry)"
+    />
+  </template>
+  <div
+    class="text-center py-2"
+    v-text="$t('systemBar.applicationList.empty')"
   />
 </template>

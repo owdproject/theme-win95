@@ -5,5 +5,8 @@ export default {
         label: 'Start',
       },
     },
+    applicationList: {
+      empty: 'There are not applications'
+    }
   },
 }
