@@ -1,6 +1,6 @@
 {
   "name": "@owdproject/theme-win95",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Open Web Desktop theme",
   "homepage": "https://github.com/owdproject/theme-win95#readme",
   "bugs": {
@@ -19,6 +19,6 @@
     "url": "https://github.com/owdproject"
   },
   "peerDependencies": {
-    "@owdproject/core": "^3.1.0"
+    "@owdproject/core": "^3.1.3"
   }
 }
