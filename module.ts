@@ -63,7 +63,9 @@ export default defineNuxtModule({
     }
 
     {
-      await installModule(resolve('./apps/app-explorer'))
+      if (nuxt.options.modules.includes('@owdproject/module-fs')) {
+        await installModule(resolve('./apps/app-explorer'))
+      }
     }
-  },
+  }
 })
