@@ -9,23 +9,25 @@
 
 .p-button {
   display: inline-block;
-  min-width: 34px;
-  height: 34px;
+  min-width: 32px;
+  height: 32px;
   font-size: var(--p-font-size);
   border: 0;
   padding: 0;
 
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-style: solid;
-    border-width: var(--owd-border-width);
-    border-color: var(--p-card-border-color);
-    box-shadow: var(--p-card-box-shadow);
-    content: '';
+  &:not(&-text) {
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-style: solid;
+      border-width: var(--owd-border-width);
+      border-color: var(--p-card-border-color);
+      box-shadow: var(--p-card-box-shadow);
+      content: '';
+    }
   }
 
   &:not([disabled]):active,
@@ -52,6 +54,14 @@
 
   &:not([disabled]) {
     cursor: pointer;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &-icon-only {
+    border-radius: 0 !important;
   }
 
   &--primary {

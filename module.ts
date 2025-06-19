@@ -75,6 +75,8 @@ export default defineNuxtModule({
     {
       if (nuxt.options.modules.includes('@owdproject/module-fs')) {
         await installModule(resolve('./apps/app-explorer'))
+        await installModule('@owdproject/app-classic-audioplayer')
+        await installModule('@owdproject/app-classic-videoplayer')
       }
     }
   }

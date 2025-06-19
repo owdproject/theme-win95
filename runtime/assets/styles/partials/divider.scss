@@ -4,9 +4,13 @@
 }
 
 .p-divider {
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
-  border-color: rgb(254, 254, 254) rgb(132, 133, 132) rgb(132, 133, 132)
-    rgb(254, 254, 254);
-  background: rgb(198, 198, 198);
+  border-color: rgb(var(--owd-theme-color-dark)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white))
+    rgb(var(--owd-theme-color-dark));
+  background: rgb(var(--owd-theme-color-light));
+
+  &-horizontal {
+    margin: 2px 0;
+  }
 }

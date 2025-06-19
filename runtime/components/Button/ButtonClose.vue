@@ -11,7 +11,7 @@
   top: 50%;
   left: 50%;
   margin-left: -1px;
-  margin-top: -9px;
+  margin-top: -10px;
   transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
   position: relative;
 

@@ -1,136 +1,90 @@
 <script setup lang="ts">
-import { useClipboardFs } from '@owdproject/core/runtime/composables/useClipboardFs'
-
-import { fs } from '@zenfs/core'
-import { ref, watch } from 'vue'
+import { useFileSystemExplorer } from '@owdproject/module-fs/runtime/composables/useFileSystemExplorer'
+import WindowDirectoryToolbar from './Directory/WindowDirectoryToolbar.vue'
+import WindowDirectoryAddress from './Directory/WindowDirectoryAddress.vue'
 
 const props = defineProps<{
   config?: WindowConfig
   window?: IWindowController
 }>()
 
-const basePath = ref(props.window.meta.path)
-const directory = ref(await fs.readdirSync(basePath.value))
 
-watch(
-  () => basePath.value,
-  () => {
-    props.window.meta.path = basePath.value
-  },
-)
+const fsExplorer = useFileSystemExplorer(props.window)
 
-async function onDirectoryClick(fileName: string) {
-  if (basePath.value !== '/') {
-    basePath.value += '/'
-  }
-  basePath.value += fileName
-  directory.value = await fs.readdirSync(basePath.value)
-}
-
-const { clipboardPath, clipboardType, setClipboard, clearClipboard } =
-  useClipboardFs()
-
-const selectedFile = ref<string | null>(null)
-
-async function onFileClick() {}
-
-async function onFileSelect(fileName: string) {
-  selectedFile.value = `${basePath.value}/${fileName}`
-}
-
-async function onFileCut() {
-  if (!selectedFile.value) return
-  setClipboard(selectedFile.value, 'cut')
-}
-
-async function onFileCopy() {
-  if (!selectedFile.value) return
-  setClipboard(selectedFile.value, 'copy')
-}
-
-async function onFileDelete() {
-  if (
-    !window.confirm(`Sei sicuro di voler eliminare "${selectedFile.value}"?`)
-  ) {
-    return
-  }
-
-  const fullPath = `${basePath.value}/${selectedFile.value}`
-
-  try {
-    const stats = await fs.statSync(fullPath)
-
-    if (stats.isFile()) {
-      await fs.unlinkSync(fullPath)
-    } else if (stats.isDirectory()) {
-      const confirmed = window.confirm(
-        `La cartella "${selectedFile.value}" potrebbe contenere dei file. Eliminarla comunque?`,
-      )
-
-      if (confirmed) {
-        await fs.rmSync(fullPath, { recursive: true, force: true })
-      }
-    }
-
-    directory.value = await fs.readdirSync(basePath.value)
-  } catch (error) {
-    console.error("Errore durante l'eliminazione:", error)
-  }
-}
-
-async function onFilePaste() {
-  if (!clipboardPath.value || !clipboardType.value) return
-
-  const fileName = clipboardPath.value.split('/').pop()!
-  const targetPath = `${basePath.value}/${fileName}`
-
-  if (clipboardType.value === 'copy') {
-    await fs.copyFile(clipboardPath.value, targetPath)
-  } else if (clipboardType.value === 'cut') {
-    await fs.rename(clipboardPath.value, targetPath)
-    clearClipboard()
-  }
-
-  // refresh
-  directory.value = await fs.readdirSync(basePath.value)
-}
-
-function onFolderUp() {
-  const parts = basePath.value.split('/').filter(Boolean)
-  if (parts.length === 0) return
-  parts.pop()
-  basePath.value = '/' + parts.join('/')
-  directory.value = fs.readdirSync(basePath.value)
-}
+props.window.fsExplorer = fsExplorer
+props.window.fsExplorer.initialize()
 </script>
 
 <template>
   <Window v-bind="$props">
-    <div class="flex-row">
-      <div class>
-        <InputText :value="basePath" style="vertical-align: middle" />
+    <div class="flex flex-col h-full">
+      <Menubar breakpoint="false" :model="window.menu" />
 
-        <WindowDirectoryActionFolderUp class="mr-3" @click="onFolderUp" />
+      <Divider />
 
-        <WindowDirectoryActionCut @click="onFileCut" />
+      <WindowDirectoryToolbar
+        @back="fsExplorer.directoryBack"
+        @forward="fsExplorer.directoryForward"
+        @up="fsExplorer.directoryUp"
+        @cut="fsExplorer.cutFiles"
+        @copy="fsExplorer.copyFiles"
+        @paste="fsExplorer.pasteFiles"
+        @delete="fsExplorer.deleteSelectedFiles"
+        @undo="fsExplorer.operationUndo"
+        @properties="fsExplorer.fileProperties"
+      />
 
-        <WindowDirectoryActionCopy @click="onFileCopy" />
+      <Divider />
 
-        <WindowDirectoryActionPaste class="mr-3" @click="onFilePaste" />
+      <WindowDirectoryAddress
+        :address="fsExplorer.basePath.value"
+        @update:modelValue="value => fsExplorer.basePath.value = value"
+      />
 
-        <WindowDirectoryActionDelete @click="onFileDelete" />
+      <Divider />
+
+      <div class="flex-1 overflow-auto">
+        <DataTable class="h-full">
+
+          <SelectableArea
+            v-if="!window.meta.path.startsWith('http')"
+            :fs-explorer="fsExplorer"
+          >
+            <FileSystemFile
+              v-for="fileName of fsExplorer.fsEntries.value"
+              :key="fileName"
+              :data-filename="fileName"
+              :basePath="fsExplorer.basePath.value"
+              :fileName="fileName"
+              :selected="fsExplorer.selectedFiles.value.includes(`${fsExplorer.basePath.value}/${fileName}`)"
+              :cutted="fsExplorer.fsClipboard.clipboardFiles.value.includes(`${fsExplorer.basePath.value}/${fileName}`) && fsExplorer.fsClipboard.clipboardType.value === 'cut'"
+              @openDirectory="window.fsExplorer.openDirectory"
+              @openFile="fsExplorer.openFile"
+            />
+          </SelectableArea>
+          <iframe
+            :src="window.meta.path"
+          />
+
+        </DataTable>
       </div>
     </div>
-    <Divider class="my-1" />
-    <FileSystemFile
-      v-for="fileName of directory"
-      :basePath="basePath"
-      :fileName="fileName"
-      @openDirectory="onDirectoryClick"
-      @openFile="onFileClick"
-      @selectFile="onFileSelect"
-    />
   </Window>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.h-full {
+  overflow-x: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+:deep(.owd-window:not(.owd-window--focused)) {
+  iframe {
+    pointer-events: none;
+  }
+}
+</style>

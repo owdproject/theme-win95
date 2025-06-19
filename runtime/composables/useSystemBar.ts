@@ -60,7 +60,7 @@ export function useSystemBar() {
         cb: function () {
           applicationManager.execAppCommand(
             defaultTerminalApp.application.id,
-            defaultTerminalApp.entry.command,
+            defaultTerminalApp.command,
           )
         },
       })
@@ -78,7 +78,7 @@ export function useSystemBar() {
         cb: function () {
           applicationManager.execAppCommand(
             defaultAuthApp.application.id,
-            defaultAuthApp.entry.command,
+            defaultAuthApp.command,
           )
         },
       })

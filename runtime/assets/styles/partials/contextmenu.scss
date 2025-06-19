@@ -1,0 +1,19 @@
+:root {
+  --p-contextmenu-background: var(--p-surface-900);
+  --p-contextmenu-submenu-background: var(--p-contextmenu-background);
+  --p-contextmenu-shadow: var(--owd-border-color);
+  --p-contextmenu-item-padding: 8px 8px;
+  --p-contextmenu-submenu-label-padding: 4px 8px;
+  --p-contextmenu-submenu-label-font-weight: 600;
+}
+
+.p-contextmenu {
+  border-width: 2px;
+
+  &-item-content {
+    &:hover {
+      background: rgb(var(--owd-elevation-active-background)) !important;
+      color: rgb(var(--owd-elevation-active-color)) !important;
+    }
+  }
+}

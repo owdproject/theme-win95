@@ -12,8 +12,10 @@ export default {
       component: () => import('./components/Window/WindowExplorer.vue'),
       resizable: true,
       size: {
-        width: 448,
-        height: 240,
+        width: 560,
+        height: 440,
+        minWidth: 560,
+        minHeight: 440,
       },
       position: {
         x: 400,
@@ -24,12 +26,12 @@ export default {
   },
   entries: {
     explorer: {
-      command: 'explorer',
+      command: 'explorer /',
     },
   },
   commands: {
     explorer: (app: IApplicationController, args: any) => {
-      const meta = args ? { path: args[0] } : { path: '/' }
+      const meta = args ? { path: args._[1] } : { path: '/' }
       app.openWindow('main', undefined, meta)
     },
   },

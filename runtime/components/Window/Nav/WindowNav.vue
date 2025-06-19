@@ -84,6 +84,9 @@ function onWindowNavDestroy() {
     padding-left: 6px;
     gap: var(--owd-gap);
     flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .owd-window-nav__draggable {

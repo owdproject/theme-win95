@@ -15,7 +15,7 @@ defineProps<{
   >
     <div class="flex">
       <div>
-        <Icon :name="entry.icon" :size="21" />
+        <Icon :name="entry.icon" :size="20" />
       </div>
       <div class="flex-1 pl-2">
         {{ entry.title }}
@@ -27,8 +27,8 @@ defineProps<{
 <style scoped lang="scss">
 .owd-system-bar__menu__item {
   cursor: pointer;
-  height: 31px;
-  line-height: 26px;
+  height: 28px;
+  line-height: 23px;
 
   .iconify {
     vertical-align: -4px;

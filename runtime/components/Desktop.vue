@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { useDesktopManager } from '@owdproject/core/runtime/composables/useDesktopManager'
 import { useSystemLifecycle } from '../composables/useSystemLifecycle'
 
@@ -8,6 +9,19 @@ defineProps<{
 
 const desktop = useDesktopManager()
 const systemLifecycle = useSystemLifecycle()
+
+onMounted(() => {
+  document.addEventListener("contextmenu", (event) => {
+    if (isDebugMode()) return
+
+    const tag = event.target.tagName.toLowerCase()
+    const isInput = tag === 'input' || tag === 'textarea' || event.target.isContentEditable
+
+    if (!isInput) {
+      event.preventDefault()
+    }
+  })
+})
 </script>
 
 <template>

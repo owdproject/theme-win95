@@ -64,7 +64,7 @@ function onRootMenuItemClick(listItem) {
   left: var(--owd-border-width);
   padding: var(--owd-gap);
   max-height: 80dvh;
-  width: 280px;
+  width: 240px;
   cursor: default;
 
   :deep(> .p-card-body > .p-card-content) {
@@ -74,7 +74,7 @@ function onRootMenuItemClick(listItem) {
     .owd-system-bar__menu {
       &__title {
         background: rgb(var(--owd-elevation-inactive));
-        width: 36px;
+        width: 32px;
       }
 
       &__list {

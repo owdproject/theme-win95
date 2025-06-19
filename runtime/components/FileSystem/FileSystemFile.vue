@@ -1,35 +1,38 @@
 <script setup lang="ts">
 import { fs } from '@zenfs/core'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import FileSystemFileContextMenu from './FileSystemFileContextMenu.vue'
+import FileSystemFileIcon from './FileSystemFileIcon.vue'
 
 const props = defineProps<{
   basePath: string
   fileName: string
+  selected?: boolean
+  cutted?: boolean
 }>()
 
 const emit = defineEmits([
   'openDirectory',
   'openFile',
-  'select',
   'delete',
   'rename',
 ])
 
 const path = `${props.basePath}/${props.fileName}`
 const pathStats = ref<fs.Stats | null>(null)
-const isDirectory = ref<boolean>()
+const isDirectory = ref<boolean>(false)
 const isFile = ref<boolean>()
 const fileContent = ref<string | null>(null)
 
 const contextMenuRef = ref() // riferimento al menu interno
 
 async function fetchStatsAndContent(currentPath: string) {
-  await fs.stat(currentPath, (err, stats) => {
+  fs.stat(currentPath, (err, stats) => {
     if (err) {
       pathStats.value = null
-      isFile.value = undefined
-      isDirectory.value = undefined
+      isFile.value = false
+      isDirectory.value = false
+      console.error(err)
       return
     }
 
@@ -40,16 +43,16 @@ async function fetchStatsAndContent(currentPath: string) {
 
   if (isFile.value) {
     try {
-      fileContent.value = await fs.readFileSync(currentPath, 'utf-8')
+      fileContent.value = fs.readFileSync(currentPath, 'utf-8')
     } catch (error) {
-      console.error('Errore durante la lettura del file:', error)
+      console.error('Error while reading the file', error)
       fileContent.value = null
     }
   } else if (isDirectory.value) {
     try {
-      fileContent.value = null // Pulisci il contenuto del file se è una directory
+      fileContent.value = null
     } catch (error) {
-      console.error('Errore durante la lettura della directory:', error)
+      console.error('Error while reading the directory:', error)
     }
   } else {
     fileContent.value = null
@@ -69,7 +72,7 @@ function onRightClick(event: MouseEvent) {
 }
 
 onMounted(() => {
-  fetchStatsAndContent(`${props.basePath}/${props.fileName}`)
+  fetchStatsAndContent(path)
 })
 
 // rename
@@ -98,37 +101,37 @@ function renameCancel() {
 
 <template>
   <div
-    class="inline-block text-center m-1"
-    @click="$emit('select', fileName)"
+    :class="['owd-file text-center m-1', {'owd-file--selected': selected}, {'owd-file--cutted': cutted}]"
+    :title="fileName"
     @dblclick="onFileOpen"
     @contextmenu.prevent="onRightClick"
   >
-    <div class="flex items-center rounded-sm p-2 cursor-pointer">
-      <img
-        v-if="isDirectory"
-        src="data:image/x-icon;base64,AAABAAIAICAQAAEABADoAgAAJgAAABAQEAABAAQAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDMzMzMzMzMzMzMzMzMzMwj7e3t7e3t7e3t7e3t7e3MI97e3t7e3t7e3t7e3t7ezCPt7e3t7e3t7e3t7e3t7cwj3t7e3t7e3t7e3t7e3t7MI+3t7e3t7e3t7e3t7e3tzCPe3t7e3t7e3t7e3t7e3swj7e3t7e3t7e3t7e3t7e3MI97e3t7e3t7e3t7e3t7ezCPt7e3t7e3t7e3t7e3t7cwj3t7e3t7e3t7e3t7e3t7MI+3t7e3t7e3t7e3t7e3tzCPe3t7e3t7e3t7e3t7e3swj7e3t7e3t7e3t7e3t7e3MI97e3t7e3t7e3t7e3t7ezCPt7e3t7e3t7e3t7e3t7cwj3t7e3t7e3t7e3t7e3t7MI+3t7e3t7e3t7e3t7e3tzCPe3t7e3t7e3t7e3t7e3swj7e3t7e3t7e3t7e3t7e3MI///////////////////wCHd3d3d3d3d4iIiIiIiIgACPt7e3t7e3gAAAAAAAAAAACPt7e3t7eAAAAAAAAAAAAACP/////4AAAAAAAAAAAAAACIiIiIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////gAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAP//wAH//+AD///wB/////////////8oAAAAEAAAACAAAAABAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIiIgAj7e3t7e3uACPe3t7e3t4AI+3t7e3t7gAj3t7e3t7eACPt7e3t7e4AI97e3t7e3gAj7e3t7e3uACP///////4AIe3t7eIiIgACHt7eAAAAAAAiIiAAAAAAAAAAAAAAAAA//8AAP//AACAAQCgAAHOAAABzgAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAMAAID/AADB/wAA//8AAA=="
-      />
-      <img
-        v-else
-        src="data:image/x-icon;base64,AAABAAEAICAQAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AAAAHd3d3d3d3d3d3d3dwAAAAAAAAAAAAAAAAAAAAcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////////wcAAAAA//////////////8HAAAAAP//////////////BwAAAAD//////////wAAAAAAAAAA//////////8P+HAAAAAAAP//////////D4cAAAAAAAD//////////whwAAAAAAAA//////////8HAAAAAAAAAP//////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAAH8AAAD/AAAB/wAAA/8AAAf/AAAP/wAAH/8AAD/w=="
-      />
+
+    <div class="flex items-center rounded-sm p-2">
+      <FileSystemFileIcon :file-name="fileName" :is-directory="isDirectory" />
     </div>
-    <span
-      v-if="!isRenaming"
-      @dblclick.stop="renameStart"
-      class="text-sm text-gray-800 truncate"
-    >
-      {{ fileName }}
-    </span>
-    <input
-      v-else
-      v-model="editableName"
-      class="text-sm text-gray-800 truncate border border-gray-300 rounded-sm px-1"
-      @blur="renameCommit"
-      @keyup.enter="renameCommit"
-      @keyup.esc="renameCancel"
-      autofocus
-    />
+
+    <div class="owd-file__name">
+
+      <span
+        v-if="!isRenaming"
+        @dblclick.stop="renameStart"
+        class="text-sm text-gray-800 truncate"
+        v-text="fileName"
+      />
+
+      <input
+        v-else
+        v-model="editableName"
+        class="text-sm text-gray-800 truncate border border-gray-300 rounded-sm px-1"
+        @blur="renameCommit"
+        @keyup.enter="renameCommit"
+        @keyup.esc="renameCancel"
+        autofocus
+      />
+
+    </div>
+    <slot />
 
     <FileSystemFileContextMenu
       ref="contextMenuRef"
@@ -138,10 +141,43 @@ function renameCancel() {
       @rename="renameStart"
       @delete="$emit('delete', fileName)"
     />
+
   </div>
 </template>
 
 <style scoped lang="scss">
+.owd-file {
+  display: inline-block;
+  width: 64px;
+
+  .owd-file__name {
+    position: relative;
+    display: inline-flex;
+
+    input {
+      border: 0;
+    }
+  }
+
+  &--selected {
+    .owd-file__name {
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        border: 1px dotted black;
+      }
+    }
+  }
+
+  &--cutted {
+    opacity: 0.6;
+  }
+}
+
 .truncate {
   max-width: 64px;
   overflow: hidden;
