@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useSystemBar } from '../../composables/useSystemBar'
+import { useApplicationManager } from '@owdproject/core/runtime/composables/useApplicationManager'
 
-const systemBar = useSystemBar()
+const applicationManager = useApplicationManager()
 </script>
 
 <template>
   <div
-    v-if="systemBar.windows.value.length > 0"
+    v-if="applicationManager.windowsOpened.value.length > 0"
     class="owd-system-bar__windows"
   >
     <Button
-      v-for="[windowId, window] of systemBar.windows.value"
+      v-for="[windowId, window] of applicationManager.windowsOpened.value"
       :key="window.state.id"
       :class="[
         'p-button--system-bar',

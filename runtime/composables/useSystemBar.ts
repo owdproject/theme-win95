@@ -1,28 +1,37 @@
+import { useAppConfig } from 'nuxt/app'
 import { useApplicationManager } from '@owdproject/core/runtime/composables/useApplicationManager'
-import { useDesktopManager } from '@owdproject/core/runtime/composables/useDesktopManager'
 import { useApplicationEntries } from '@owdproject/core/runtime/composables/useApplicationEntries'
+import { useDesktopDefaultAppsStore } from '@owdproject/core/runtime/stores/storeDesktopDefaultApps'
 import { useSystemLifecycle } from '../composables/useSystemLifecycle'
 import { ref, computed } from '@vue/reactivity'
 
 export function useSystemBar() {
+  const appConfig = useAppConfig()
   const applicationManager = useApplicationManager()
-  const desktopManager = useDesktopManager()
+  const desktopDefaultAppsStore = useDesktopDefaultAppsStore()
 
   const systemLifecycle = useSystemLifecycle()
 
-  const config = desktopManager.config.systemBar
+  const enabled = computed(() => {
+    return appConfig.desktop?.systemBar?.enabled
+  })
 
-  const enabled = ref(false)
-  const windows: ComputedRef<any> = computed(
-    () => applicationManager.windowsOpened,
-  )
+  const position = computed(() => {
+    return appConfig.desktop?.systemBar?.position
+  })
+
+  const startButton = computed(() => {
+    return appConfig.desktop?.systemBar?.startButton
+  })
+
+  const opened = ref<boolean>(false)
 
   const appEntries = useApplicationEntries()
   const appEntriesSortedByTitle = appEntries.sortedAppEntries('title')
 
   const menu = computed(() => {
-    const defaultTerminalApp = desktopManager.getDefaultApp('terminal')
-    const defaultAuthApp = desktopManager.getDefaultApp('auth')
+    const defaultTerminalApp = desktopDefaultAppsStore.getDefaultApp('terminal')
+    const defaultAuthApp = desktopDefaultAppsStore.getDefaultApp('auth')
 
     const systemBarMenu: any = [
       {
@@ -98,8 +107,9 @@ export function useSystemBar() {
 
   return {
     enabled,
-    config,
-    windows,
+    position,
+    startButton,
+    opened,
     menu,
   }
 }

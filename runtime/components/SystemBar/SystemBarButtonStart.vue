@@ -8,11 +8,11 @@ const startButtonElement = useTemplateRef('startButtonElement')
 const systemBar = useSystemBar()
 
 function toggleApplicationMenu() {
-  systemBar.enabled.value = !systemBar.enabled.value
+  systemBar.opened.value = !systemBar.opened.value
 }
 
 function closeApplicationMenu(): void {
-  systemBar.enabled.value = false
+  systemBar.opened.value = false
 }
 
 onClickOutside(startButtonElement, () => closeApplicationMenu())
@@ -26,7 +26,7 @@ onClickOutside(startButtonElement, () => closeApplicationMenu())
     aria-controls="system-bar__menu"
     :pt:root="[
       'p-button__system-bar p-button__system-bar-start',
-      { 'p-button--active': systemBar.enabled.value },
+      { 'p-button--active': systemBar.opened.value },
     ]"
     @pointerdown.self="toggleApplicationMenu"
   >
@@ -34,7 +34,7 @@ onClickOutside(startButtonElement, () => closeApplicationMenu())
     {{ $t('systemBar.start.button.label') }}
   </Button>
   <SystemBarMenu
-    v-if="systemBar.enabled.value"
+    v-if="systemBar.opened.value"
     id="system-bar__menu"
     @close="closeApplicationMenu"
   />

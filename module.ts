@@ -14,6 +14,7 @@ export default defineNuxtModule({
     configKey: 'desktop'
   },
   defaults: {
+    name: 'win95',
     systemBar: {
       enabled: true,
       position: 'bottom',
@@ -25,8 +26,8 @@ export default defineNuxtModule({
 
     // assign open web desktop theme base config to runtime config
     nuxt.options.runtimeConfig.public.desktop = deepMerge(
+      nuxt.options.runtimeConfig.public.desktop,
       options,
-      nuxt.options.runtimeConfig.public.desktop
     )
 
     {

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { useDesktopManager } from '@owdproject/core/runtime/composables/useDesktopManager'
+import { useSystemBar } from '../../composables/useSystemBar'
 import { computed } from '@vue/reactivity'
 
-const desktop = useDesktopManager()
+const systemBar = useSystemBar()
 
 const classes = computed(() => {
   const list = ['owd-desktop__content']
 
-  if (desktop.config.systemBar?.position) {
+  if (systemBar.position.value) {
     list.push(
-      `owd-desktop__content--system-bar-position-${desktop.config.systemBar.position}`,
+      `owd-desktop__content--system-bar-position-${systemBar.position.value}`,
     )
   }
 

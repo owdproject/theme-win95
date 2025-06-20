@@ -6,7 +6,7 @@ export default {
       },
     },
     applicationList: {
-      empty: 'There are not applications'
+      empty: 'There are no applications'
     }
   },
   fs: {
@@ -32,7 +32,6 @@ export default {
         delete: 'Delete',
         properties: 'Properties',
         newFolder: 'New Folder',
-        properties: 'Properties',
         ok: 'OK',
         cancel: 'Cancel',
         close: 'Close',

@@ -7,7 +7,7 @@ function onRootMenuItemClick(listItem) {
   if (typeof listItem.cb === 'function') {
     listItem.cb()
 
-    systemBar.enabled.value = false
+    systemBar.opened.value = false
   }
 }
 </script>

@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { useDesktopManager } from '@owdproject/core/runtime/composables/useDesktopManager'
+import { useSystemBar } from '../composables/useSystemBar'
 import { useSystemLifecycle } from '../composables/useSystemLifecycle'
 
-defineProps<{
-  systemBar?: DesktopSystemBarConfig
-}>()
-
-const desktop = useDesktopManager()
+const systemBar = useSystemBar()
 const systemLifecycle = useSystemLifecycle()
 
 onMounted(() => {
@@ -33,9 +29,13 @@ onMounted(() => {
     </DesktopContent>
 
     <CoreApplicationRender />
-    <SystemBar v-if="desktop.config.systemBar?.enabled" />
+    <SystemBar
+      v-if="systemBar.enabled.value"
+    />
 
-    <DesktopShutdown :active="systemLifecycle.isShuttingDown.value" />
+    <DesktopShutdown
+      :active="systemLifecycle.isShuttingDown.value"
+    />
   </CoreDesktop>
 </template>
 

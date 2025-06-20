@@ -7,10 +7,10 @@ const systemBar = useSystemBar()
 const classes = computed(() => {
   const list = ['owd-desktop__system-bar p-card--border']
 
-  if (systemBar.config?.position) {
+  if (systemBar.position.value) {
     list.push(
       'owd-desktop__system-bar--position',
-      `owd-desktop__system-bar--position-${systemBar.config.position}`,
+      `owd-desktop__system-bar--position-${systemBar.position.value}`,
     )
   }
 
@@ -22,7 +22,7 @@ const classes = computed(() => {
   <Card :class="classes">
     <template #content>
       <div>
-        <SystemBarButtonStart v-if="systemBar.config?.startButton" />
+        <SystemBarButtonStart v-if="systemBar.startButton.value" />
 
         <Divider layout="vertical" type="solid" />
 

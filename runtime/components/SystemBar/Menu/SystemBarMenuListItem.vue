@@ -9,7 +9,7 @@ const systemBar = useSystemBar()
 
 function onListClick() {
   if (props.closeOnClick) {
-    systemBar.enabled.value = false
+    systemBar.opened.value = false
   }
 }
 </script>
