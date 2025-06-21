@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { useSystemBar } from '../composables/useSystemBar'
 import { useSystemLifecycle } from '../composables/useSystemLifecycle'
+import { isDebugMode } from '@owdproject/core/runtime/utils/utilDebug'
 
 const systemBar = useSystemBar()
 const systemLifecycle = useSystemLifecycle()

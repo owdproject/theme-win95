@@ -48,9 +48,10 @@ export function useSystemBar() {
         image:
           'data:image/png;base64,AAABAAEAICAQAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgzMzMzMzMzMzMzMzMwAAAIt7e3t7e3t7e3t7e3MAAACHt7e3t7e3t7e3t7ezAAAIe3t7e3t7e3t7e3t7cAAACLe3t7e3t7e3t7e3t3AAAAh7e3t7e3t7e3t7e3uAAAAIt7e3t7e3t7e3t7e3gAAAi3t7e3t7e3t7e3t7ewAAAIe3t7e3t7e3t7e3t7cDAACLe3t7e3t7e3t7e3t4AAAAh7e3t7e3t7e3t7e3uAcACHt7e3t7e3t7e3t7e3CPcAi3t7e3t7e3t7e3t7eA//cIe3t7e3t7e3t7e3t3gP9wCP///////////////w/3AACId3d3d3d3d3d3d3d/cAAAAI+P//j3bMLGYsD/9wMAAACPeP//j3LMIiJP/3CzAAAAj7eP/4f3YiJmD/cLsAAAAI97eP/4f8IiIP9wiIAAAAAI97eP/4jyaI/3AAAAAAAAAI//+P//iI//cAAAAAAAAAAIiIiP////9wAAAAAAAAAAAAAACP///3AAAAAAAAAAAAAAAACP//cAAAAAAAAAAAAAAAAACP9wAAAAAAAAAAAAAAAAAACHAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////AAAAfgAAAD4AAAA+AAAAPAAAADwAAAA8AAAAPAAAADgAAAA4AAAAOAAAADgAAAAwAAAAEAAAAAAAAAAQAAAAOAAAAD4AAAA+AAAAPgAAAD4AAAD/AAAP/4AAH//AAD///wB///+A////wf///+P////3///////w==',
         cb: function () {
-          applicationManager.execAppCommand(
+          applicationManager.launchAppEntry(
             'org.owdproject.explorer',
-            'explorer /',
+            'explorer',
+            '/'
           )
         },
       },
@@ -67,9 +68,9 @@ export function useSystemBar() {
         image:
           'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAAEEfUpiAAAACXBIWXMAAAsSAAALEgHS3X78AAACPklEQVRYhb2Xa5KsIAyFPyz31dmZp3cWVpb7Q6HBRltneu6poqTEPAjJCc4AkoIW0WACyDnXxblMns/n+mIvPwMsyzJWGBExt/JVRFJIC/BacLfetYG2l5+SOEVEhLvHaK36cK4CBSJAASraogpKGjooKabtS1JKQ92zu2/79uEHk5kl2MV3pyGgD+/bNutepDdH5mYxJBACXYguIO0srAfo2/yjPO7OrPWgQaKVERBxfkDuziRI5s4Sgblj7iB9FC6YiqYWV/bfKZCUSum4+2XrFe4eJWXdPS5kZ+PuVinuHgF1UIL7AV0e3PN7p8DMeJhBQEq6KK4+kVIEMC4bd8PM6omZWe8BgOcMOF1GdUq8m5tZr+DxeFx0/cWYs7Zou1lneLmRCzEan1CIadKW9xGBu99KY9hS+TeYSh2klOrR3K6FTSiO+PU0BvBKYzM75N8jzJKipdxC4leDWROpWC6CIwYeYYKV0xvBS5YrAiqR7PjgEub9C0lRjvOv8VaM/aKvTQqoj4vhKReMPX2086Lr0IHVbonkvdRqI3g0Lzh0YHWwNHx1j884/7CNxmkEjq4kv0V7+5xUMncr7xKmRYKU3sbdSv+EWZCQwnKuHSHnTN61D1iT8EdEd4IhHd9pTV91IOfM8/kk51wz9n9xArCSULkmsTHcxvSX28TVVlL0TjsHUntrLy322+feoruamVk9/1Kr7l6bxdGvxK8d2BsfQdKf5MNbFex/dwZG05cHcHA3OxhfxfQDpV914h9JEV2g7g1TEQAAAABJRU5ErkJggg==',
         cb: function () {
-          applicationManager.execAppCommand(
+          applicationManager.launchAppEntry(
             defaultTerminalApp.application.id,
-            defaultTerminalApp.command,
+            defaultTerminalApp.entry,
           )
         },
       })
