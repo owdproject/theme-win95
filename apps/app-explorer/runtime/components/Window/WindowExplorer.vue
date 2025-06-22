@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useConfirm } from 'primevue/useconfirm'
-
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
@@ -23,14 +22,12 @@ const explorerMenu = [
       {
         label: t('apps.explorer.action.delete'),
         command: () => {
-          props.window.fsExplorer.deleteSelectedFiles()
+          props.window.fsExplorer.fsController.deleteSelectedFiles()
         },
       },
       {
         label: t('apps.explorer.action.rename'),
-        command: () => {
-          props.window.fsExplorer.deleteSelectedFiles()
-        },
+        command: () => {},
       },
       {
         label: t('apps.explorer.action.properties'),
@@ -43,7 +40,7 @@ const explorerMenu = [
         label: t('apps.explorer.action.close'),
         command: () => {
           props.window.destroy()
-        }
+        },
       },
     ],
   },
@@ -53,19 +50,19 @@ const explorerMenu = [
       {
         label: t('apps.explorer.action.cut'),
         command: () => {
-          props.window.fsExplorer.cutFiles()
+          props.window.fsExplorer.cutSelectedFiles()
         },
       },
       {
         label: t('apps.explorer.action.copy'),
         command: () => {
-          props.window.fsExplorer.copyFiles()
+          props.window.fsExplorer.copySelectedFiles()
         },
       },
       {
         label: t('apps.explorer.action.paste'),
         command: () => {
-          props.window.fsExplorer.pasteFiles()
+          props.window.fsExplorer.fsController.pasteClipboardFiles()
         },
       },
       {
@@ -149,6 +146,22 @@ const confirm = useConfirm()
   <WindowDirectory v-bind="$props" />
 
   <ConfirmDialog />
+
+  <ConfirmDialog group="delete">
+    <template #message="ctx">
+      <div class="flex items-center space-x-3">
+        <div class="text-yellow-500 mt-1">
+          <img v-if="ctx.message.toTrash" src="data:image/gif;base64,R0lGODlhHQAgAMIGAAAAAAAA/wCAAICAgMDAwP///7KysrKysiH5BAEKAAcALAAAAAAdACAAAAPUeLo3/vCxSV25OJcB6HybJg5E51kXKmJDUVYptGZAXX9bdAV8z8ccXA40E5kWJAJw52sGLgAHkkBVuqxFDCCmSFYvBGcTSoU2qmgwdgUoFzpetDvsdOfg8rz6C3SY4lUDAgJ2fQ9HgASDi4pUERCIVIuEkowEj4dTlZSbjphBU5NVopeYR12KhJx5n6dng3mSno+uJLCjuKW0FYpJt4KzkCeyk5amw4HFgbsVDsmszBQ1zpfQwh4L04m6mdgM2nLR3tlRXuLj5M6Qrujf5Rzs7dI32AkAOw==" />
+          <img v-else src="data:image/gif;base64,R0lGODlhIAAgAOMIAAAAAAAA//8AAICAAICAgMDAwP//AP///7KysrKysrKysrKysrKysrKysrKysrKysiH5BAEKAAgALAAAAAAgACAAAAT+EElEqq0z663J+eBHcOTmGQWqpmNZnmm8Gq3bFXiu61dvARlPaEgsggZACWwmazJVyInH6av2ClHlgSk0EgmALOVA9RYrgOSYa/4WwFLyrNsWkeHrJr0ufAOncyABg4SDQ2BpiUsxe3UhBQCAMl2FlZYBH5CLKI2OmZFyk4KXpJ8wOAYCqgKeQ5AFoauyAqSXpjGyH7kHex5TvLwEsDi7shU4F2TBvgeRCKnFucywv13CE7O6xsrTwNXPCNkH2czl3sjYs+rlb8DU7QUZ0aoI53cSvPVvNeGr2vS+KIxRIgWHBnX0CAYReGBCvg2y6gmcyE/giIo2MmqswVFhR4ICEQAAOw==" />
+        </div>
+
+        <div>
+          {{ctx.message.message}}
+        </div>
+      </div>
+    </template>
+  </ConfirmDialog>
+
   <ConfirmDialog group="about">
     <template #message>
       <div>
@@ -158,16 +171,13 @@ const confirm = useConfirm()
         </p>
         <p class="mt-2">
           <a
-            href="https://github.com/owdproject/owd-theme-win95"
+            href="https://github.com/owdproject/theme-win95"
             target="_blank"
           >
-            @owdproject/theme-win95
+            github.com/owdproject/theme-win95
           </a>
-          &nbsp; for Open Web Desktop
         </p>
       </div>
     </template>
   </ConfirmDialog>
 </template>
-
-<style scoped lang="scss"></style>

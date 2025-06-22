@@ -156,6 +156,7 @@ function renameCancel() {
 
     input {
       border: 0;
+      text-align: center;
     }
   }
 

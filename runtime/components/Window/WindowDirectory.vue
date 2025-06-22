@@ -1,15 +1,23 @@
 <script setup lang="ts">
 import { useFileSystemExplorer } from '@owdproject/module-fs/runtime/composables/useFileSystemExplorer'
+import useFsController from '../../../runtime/composables/useFsController'
+
 import WindowDirectoryToolbar from './Directory/WindowDirectoryToolbar.vue'
 import WindowDirectoryAddress from './Directory/WindowDirectoryAddress.vue'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
   config?: WindowConfig
   window?: IWindowController
 }>()
 
+const { t } = useI18n()
 
-const fsExplorer = useFileSystemExplorer(props.window)
+const fsExplorer = useFileSystemExplorer(
+  props.window,
+  useFsController,
+  t
+)
 
 props.window.fsExplorer = fsExplorer
 props.window.fsExplorer.initialize()
@@ -23,13 +31,14 @@ props.window.fsExplorer.initialize()
       <Divider />
 
       <WindowDirectoryToolbar
+        :arrows-disabled="fsExplorer.fsDirectoryNavigation.history.value.length <= 1"
         @back="fsExplorer.directoryBack"
         @forward="fsExplorer.directoryForward"
         @up="fsExplorer.directoryUp"
-        @cut="fsExplorer.cutFiles"
-        @copy="fsExplorer.copyFiles"
-        @paste="fsExplorer.pasteFiles"
-        @delete="fsExplorer.deleteSelectedFiles"
+        @cut="fsExplorer.cutSelectedFiles"
+        @copy="fsExplorer.copySelectedFiles"
+        @paste="fsExplorer.fsController.pasteClipboardFiles"
+        @delete="fsExplorer.fsController.deleteSelectedFiles"
         @undo="fsExplorer.operationUndo"
         @properties="fsExplorer.fileProperties"
       />
@@ -62,9 +71,11 @@ props.window.fsExplorer.initialize()
               @openFile="fsExplorer.openFile"
             />
           </SelectableArea>
+          <!--
           <iframe
             :src="window.meta.path"
           />
+          -->
 
         </DataTable>
       </div>

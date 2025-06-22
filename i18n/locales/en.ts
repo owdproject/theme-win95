@@ -25,6 +25,8 @@ export default {
         help: 'Help',
       },
       action: {
+        yes: 'Yes',
+        no: 'No',
         back: 'Back',
         forward: 'Forward',
         up: 'Up',
@@ -58,10 +60,22 @@ export default {
         date: 'Date Modified',
       },
       dialog: {
+        deleteFile: {
+          confirm: {
+            title: 'Confirm File Delete',
+            message: {
+              toVoid: "Are you sure you want to delete '{fileName}'?",
+              toTrash: "Are you sure you want to send '{fileName}' to the Recycle Bin?"
+            }
+          }
+        },
         deleteFiles: {
           confirm: {
             title: 'Confirm Files Delete',
-            message: "Are you sure you want to remove {count} files?"
+            message: {
+              toVoid: "Are you sure you want to delete {count} files?",
+              toTrash: "Are you sure you want to send {count} files to the Recycle Bin?"
+            }
           }
         },
         deleteFolder: {
