@@ -18,6 +18,7 @@ export default {
   },
   apps: {
     explorer: {
+      address: 'Address',
       menu: {
         file: 'File',
         edit: 'Edit',

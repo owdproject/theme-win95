@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import { ref } from '@vue/reactivity'
+import { ref } from 'vue'
 
 const props = defineProps<{
   address: string
 }>()
 
 const addressInput = ref(props.address)
+
+watch(() => props.address, (address) => {
+  addressInput.value = address
+})
 </script>
 
 <template>
   <div>
     <div class="flex">
       <div class="flex-col px-1" style="align-items: center; display: grid">
-        Address
+        {{$t('apps.explorer.address')}}
       </div>
       <div class="flex-col w-full">
         <InputText
