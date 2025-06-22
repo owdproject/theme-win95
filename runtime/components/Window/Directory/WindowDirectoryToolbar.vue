@@ -1,24 +1,28 @@
 <script setup lang="ts">
+defineProps<{
+  arrowsDisabled: boolean
+}>()
+
 defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 'properties'])
 </script>
 
 <template>
   <div>
-    <Button variant="text" @click="$emit('back')">
+    <Button :disabled="arrowsDisabled" variant="text" @click="$emit('back')">
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhHgAaAKECAAAAAP///7KysrKysiH5BAEKAAIALAAAAAAeABoAAAJblI8GkO2vGJxtLYqPlRmuEFydB4DimHxgyKFauZ6uurLbjbd0nPfiXgsKgz/Y8DjcIJdJC/PJi0CZxelSBrT5cIjstlcxslwpsYwsHaO7sPNasHmX3XL62/4oAAA7"
+          src="data:image/gif;base64,R0lGODlhHgAaAKECAAAAAAD//7KysrKysiH5BAEKAAIALAAAAAAeABoAAAJblI8GkO2vGJxtLYqPlRmuEFydB4DimHxgyKFauZ6uurLbjbd0nPfiXgsKgz/Y8DjcIJdJC/PJi0CZxelSBrT5cIjstlcxslwpsYwsHaO7sPNasHmX3XL62/4oAAA7"
           style="width: 15px"
         />
       </div>
       {{$t('apps.explorer.action.back')}}
     </Button>
-    <Button variant="text" @click="$emit('forward')">
+    <Button :disabled="arrowsDisabled" variant="text" @click="$emit('forward')">
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhHgAaAKECAAAAAP///7KysrKysiH5BAEKAAIALAAAAAAeABoAAAJblI8pAOrvGJyQSYqNbRmzEFzd84XcGAEgKKJHyZ7vRtfw2tq6teLy3QsKgxfg8NgrqpBM4aYJ9RmjRM6U6tPsdM7f1tZ1zZIy8a1lXqLFC3WZvWGn1nK6vI0pAAA7"
+          src="data:image/gif;base64,R0lGODlhHgAaAKECAAAAAAD//7KysrKysiH5BAEKAAIALAAAAAAeABoAAAJblI8pAOrvGJyQSYqNbRmzEFzd84XcGAEgKKJHyZ7vRtfw2tq6teLy3QsKgxfg8NgrqpBM4aYJ9RmjRM6U6tPsdM7f1tZ1zZIy8a1lXqLFC3WZvWGn1nK6vI0pAAA7"
           style="width: 15px"
         />
       </div>
@@ -29,7 +33,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhKAAiAKECAAAAAP///7KysrKysiH5BAEKAAIALAAAAAAoACIAAAJ/lA+pu+cPo2BUyRtT2Lz3hIUT4JUcKGakyW5oiqyt+abVjef6zu/zDzwpgsTWooj0HJPMJUvDVA6NsqhrWqJYr9AsYxtwCm9WMbdSxtKq6e4afJ6522wpPKz23s12OP9T15TXB/Y31hOINyeFmGh4B7gIyZg4GWf51Ki5yalTAAA7"
+          src="data:image/gif;base64,R0lGODlhKAAiAKEDAAAAAP//AP///7KysiH5BAEKAAMALAAAAAAoACIAAAKnnA+pu+cP42BUyRtTCELs/nlBgpUTEKacSJoZuqpgPALuo9Hzztr3WQkKh8SicciTiZK6ZS/BjDqVqgW1eZVasVypcqEFeLtP8XQFPY9nWx5lrRa0ne94Vq5wC+HVPH1vxzXXd3c3SJPD1wQWl1Yo6Pdl9sh0yAajqJd4tkn557g4SXbFKJnJqUB6lBraibjq2lE6SlsZWRtoG5vLG2LZiwsrPExcVAAAOw=="
           style="width: 15px"
         />
       </div>
@@ -39,7 +43,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhHgAoAKEDAAAAAMDAwP///7KysiH5BAEKAAMALAAAAAAeACgAAAK73IBgy22pGnR0TQuEQLUizR3ZFnXSGH4aaT4jGKlwK64sNrdqyOxl53PIbsIXEbfinWzKHurnzHmeUyllqMRCl8mflhZENoFU8bba/dJqaePY5AuvzfI5G2ada/P2+Ln/9AbI9KfnVngFcaioOAVByHjhFEBZSZkCYGmZlal5GdPpifkJ8elCmoCKimAqstpZGjAqC9rKSns7q1uLC6to6xsr/Et72pvLu7l1qzypOcZcCd1IJnliXWRdAAA7"
+          src="data:image/gif;base64,R0lGODlhHgAoAKEDAAAAAAD//////7KysiH5BAEKAAMALAAAAAAeACgAAAK73IBgy22pGnR0TQuEQLUizR3ZFnXSGH4aaT4jGKlwK64sNrdqyOxl53PIbsIXEbfinWzKHurnzHmeUyllqMRCl8mflhZENoFU8bba/dJqaePY5AuvzfI5G2ada/P2+Ln/9AbI9KfnVngFcaioOAVByHjhFEBZSZkCYGmZlal5GdPpifkJ8elCmoCKimAqstpZGjAqC9rKSns7q1uLC6to6xsr/Et72pvLu7l1qzypOcZcCd1IJnliXWRdAAA7"
           style="width: 15px"
         />
       </div>
@@ -49,7 +53,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhKAAoAKEDAAAAAICAgP///7KysiH5BAEKAAMALAAAAAAoACgAAALHhI+Zw+3/lJSwViOy3lwgCw5YR2ZfeAFlORpopK5dC7zOKG+4V9t7ztP1XruJ0WgpHpcnyI/zlDUbUU2VdXDGTBKgkHvb8hRea8xFFc/UOSXjGizHwSLxZBPI6/PCYz+Bt6f3d7cCV4YgxSZnpkSmIRgp+Ed4ECgpSWm4yDjGydVJktgICImZSVq5c4rKBXfoNYoVuvYqxhqpOWuKO0jKRAvFZBlsRnTb60sXsprMZ4wCC4TG/ClHDSLdNpRtjcidNCx+LM5UAAA7"
+          src="data:image/gif;base64,R0lGODlhKAAoAMIEAAAAAAAAgAAA/////7KysrKysrKysrKysiH5BAEKAAQALAAAAAAoACgAAAPLCLrcTTDKOZ21NGc1uv/gwGgkwYVoN5YbkKanwlbuG8bALJ32x4s53a8H9AVnv4ByeWkuNMml0umE1mBXIlBGsw17q11WOs0SceIPOfD11riQtkeONcbNIDrqx41KfwKBgoFGTmpkgIOChU1uWmALjo8vDId/WYqZioyWTJiaoJyUeJNzkaOlWH6eH6Chpqtlra6ZonWpN6e3uLZ7n7SDvbmzwIuwVHqPyJW8diyJxYSmSL/RziXJWnAk2WdH3KSp21bN1+DLy9ToyAkAOw=="
           style="width: 20px"
         />
       </div>
@@ -59,7 +63,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhJgAkAMIEAAAAAICAgMDAwP///7KysrKysrKysrKysiH5BAEKAAQALAAAAAAmACQAAAPpSLoM/tCxSWuL2GqC4fjg1z3b6IShCVhOEAiCe4IeDcAuLE3tGwcz0SN1++lWvKKsCGs6nw4cEHmRRp9Y53VJ6R1Vo5xgdxGDTWbqYusTu9twq1rBltqN+Dd5DXjf/Xk+e3R9cYF/hoMcSoaAjlNdjIiTgYpehz9nEJGPcppzi5RpKKQDm3yiggClKKeEnZmrrDZCr41wQbMzO3WYMy7AAUQjqUcfwS7DHbBLs7oPzFPOrBDFY7LI2cBCvYC/2tm1i5/TpbyfsuVEG5HH4Mji7Hzu79umoCXp6vHyi/vr/QihixBQ4MAHCQAAOw=="
+          src="data:image/gif;base64,R0lGODlhJgAkAMIGAAAAAAAA/4CAAMDAwP//AP///7KysrKysiH5BAEKAAcALAAAAAAmACQAAAPqeLoM/tCxSWuL2OqDIfng1z3b6IShCViOIAyDe4IeDcAuLE3tGwsz0SN1++lWvKIMubnggMyF47lrSpVQSu+oGuUG1eu3axpHFVOj+sv2tcNo7HO+dtvhHECbvq8ftXp2fIJ+YGd5g4mFS4CKfY9ZSZBUZCSShG+VeGmThgWfoKGfEE6LPg6iqQWkYph3AKqiqKtIW6azsaOwtHGOp7sBwcKhKr5Hn8LDoCqdS7m5EM1Qz7EQxp4Fydraupyux9nb4rpxmtSqO5q458uHJcDi2+RWV8jx3Lz0ceyy7hrr/PC8UxdBXzmCDxIAADs="
           style="width: 19px"
         />
       </div>
@@ -82,7 +86,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhJAAkAKECAAAAAIAAgLKysrKysiH5BAEKAAIALAAAAAAkACQAAAKEhC+py+150JsUxlursVfmtylGEHSf6KGkeQoReK1A9k6dTKdUFzb1yZs5fi1Oilg09ly6ZELGcjagGCkMaWVEs4vgkusVgqvGMRELJGubOTTzqzmQ2uL4KECnu31s1HbXF+QEp9QHyBeBI7V0U1JXxMjDhag2+QYwZ8lklGkZqWnzqFkAADs="
+          src="data:image/gif;base64,R0lGODlhJAAkAIABAP8AALKysiH5BAEKAAEALAAAAAAkACQAAAJ2hB+py+150JsUxlursVfmtyld9ImeOQIlpzppSJHT28an3YG3NurwyvrJgIscqkYsvpK+HrP5ezaMUgatqkxhA1TuDtgdErtZZIl8BGN40dkaZ3Y5M+LpnB0PfnnQvc2uxSS0JIgUuKXXVoX2FMJYqIToJrlQAAA7"
           style="width: 18px"
         />
       </div>
@@ -93,7 +97,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       <div class="p-button-image">
         <img
           class="mx-auto"
-          src="data:image/gif;base64,R0lGODlhJAAmAMIEAAAAAICAgMDAwP///7KysrKysrKysrKysiH5BAEKAAQALAAAAAAkACYAAAPSSLrcCzBKqKS7bWpQI8bQMAiCSJoCFKzBd4VjGaMq6zIQCZ9zzLa3jg6AKvpYm81waOT9kpplithzIqmi7CA3le5ktRVMK+KaAcxeODDOnsvo7hQaIW/jsPOQ3ob372laFA9YbnVkb4gchHaNio6DHY6Td5CLkpSZdpEEf5qUnG0SfnyCl52Fo3d8qaeen5Y4hbCgrq15rK2yprispru0mqGzwY3DvFS5uoyGvaWGwMWTx9LTtsikdL/MpNlQ25jVxtfi49Hl4Kjom7bK7u3vuQwJADs="
+          src="data:image/gif;base64,R0lGODlhJAAmAMIFAAAAAAAAgAAA/8DAwP///7KysrKysrKysiH5BAEKAAcALAAAAAAkACYAAAPieLrcCzBKqKS7bWpQI8YQQQyDSJoDJKzCd4VjGaMq6zIQCZ9zzLa3jg6AKvpYm81waOT9kpplithzIqmiLCE3le5ktRVMK+KaAcxeWDDOnsvo7hQaIW/jsPOQ3ob372laFA9YbnVkb4gchHaNio6DHY6Td5CLkpSZdpEHf5qUnG0BowEipKeoo4KXnYWnpqmxqziFn5mhtbaTuFqvBLGyhrS9pLDAvnDDupq8y7esosW/x8h3ysal09SqwozOoNC537Pe2NjU5Jjm2tvpreO74fCW1/PunvO4fPsbtPz/HhYkAAA7"
           style="width: 18px"
         />
       </div>
@@ -109,6 +113,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
   min-width: 50px;
   height: 50px;
   margin-bottom: 5px;
+  filter: grayscale(1);
 
   &-image {
     display: grid;
@@ -119,6 +124,14 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
       pointer-events: none;
       vertical-align: middle;
     }
+  }
+
+  &:disabled {
+    opacity: 0.35;
+  }
+
+  &:not(:disabled):hover {
+    filter: grayscale(0);
   }
 }
 
