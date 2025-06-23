@@ -13,7 +13,7 @@ const applicationManager = useApplicationManager()
       v-for="[windowId, window] of applicationManager.windowsOpened.value"
       :key="window.state.id"
       :class="[
-        'p-button--system-bar',
+        'p-button--system-bar truncate',
         { 'p-button--active': window.state.active },
       ]"
       @pointerdown.self="window.actions.toggleMinimize"
@@ -36,7 +36,8 @@ const applicationManager = useApplicationManager()
   display: inline-flex;
   height: 100%;
 
-  :deep(> .owd-button) {
+  :deep(> .p-button) {
+    max-width: 240px;
     margin-right: var(--owd-gap);
   }
 }
