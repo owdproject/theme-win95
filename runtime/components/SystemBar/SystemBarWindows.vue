@@ -19,14 +19,6 @@ const applicationManager = useApplicationManager()
       @pointerdown.self="window.actions.toggleMinimize"
     >
       <span v-text="window.title" />
-
-      <!--
-      <component
-          v-show="window.state.active"
-          :is="window.config.component"
-          :window="window"
-      />
-      -->
     </Button>
   </div>
 </template>
