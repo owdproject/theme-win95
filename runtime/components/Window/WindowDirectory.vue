@@ -65,6 +65,7 @@ props.window.fsExplorer.initialize()
               :data-filename="fileName"
               :basePath="fsExplorer.basePath.value"
               :fileName="fileName"
+              :layout="fsExplorer.layout.value"
               :selected="fsExplorer.selectedFiles.value.includes(`${fsExplorer.basePath.value}/${fileName}`)"
               :cutted="fsExplorer.fsClipboard.clipboardFiles.value.includes(`${fsExplorer.basePath.value}/${fileName}`) && fsExplorer.fsClipboard.clipboardType.value === 'cut'"
               @openDirectory="window.fsExplorer.openDirectory"

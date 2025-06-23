@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { fs } from '@zenfs/core'
 import { ref, onMounted } from 'vue'
+import { isImageFile } from '@owdproject/module-fs/runtime/utils/utilFileSystemImage'
 import FileSystemFileContextMenu from './FileSystemFileContextMenu.vue'
 import FileSystemFileIcon from './FileSystemFileIcon.vue'
 
 const props = defineProps<{
   basePath: string
   fileName: string
+  layout: string
   selected?: boolean
   cutted?: boolean
 }>()
@@ -97,18 +99,39 @@ function renameCancel() {
   editableName.value = props.fileName
   isRenaming.value = false
 }
+
+const classes = computed(() => {
+  return [
+    'owd-file text-center m-1',
+    `owd-file--size-${props.layout}`,
+    {'owd-file--selected': props.selected},
+    {'owd-file--cutted': props.cutted}
+  ]
+})
 </script>
 
 <template>
   <div
-    :class="['owd-file text-center m-1', {'owd-file--selected': selected}, {'owd-file--cutted': cutted}]"
+    :class="classes"
     :title="fileName"
     @dblclick="onFileOpen"
     @contextmenu.prevent="onRightClick"
   >
 
     <div class="flex items-center rounded-sm p-2">
-      <FileSystemFileIcon :file-name="fileName" :is-directory="isDirectory" />
+      <!--
+      <FileSystemFileThumbnail
+        v-if="layout === 'largeIcons' && isImageFile(fileName) && !isDirectory"
+        :file-name="fileName"
+        :path="path"
+      />
+      -->
+      <FileSystemFileIcon
+        :file-name="fileName"
+        :is-directory="isDirectory"
+        :path="path"
+        :layout="layout"
+      />
     </div>
 
     <div class="owd-file__name">
@@ -157,6 +180,16 @@ function renameCancel() {
     input {
       border: 0;
       text-align: center;
+    }
+  }
+
+  &--size-largeIcons {
+    width: 64px;
+    margin: 8px;
+
+    :deep(img) {
+      image-rendering: pixelated;
+      zoom: 1.5;
     }
   }
 
