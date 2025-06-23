@@ -15,23 +15,54 @@ const menu = ref<Menu | null>(null)
 const items = ref<MenuItem[]>([
   {
     label: t('fs.contextMenu.open'),
-    icon: 'pi pi-folder-open',
     command: () => {
       emit('open', props.fileName)
     },
   },
   {
+    label: t('fs.contextMenu.sendTo'),
+    command: () => {
+      window.alert('To be implemented')
+    },
+  },
+  { separator: true },
+  {
+    label: t('fs.contextMenu.cut'),
+    command: () => {
+      window.alert('To be implemented')
+    },
+  },
+  {
+    label: t('fs.contextMenu.copy'),
+    command: () => {
+      window.alert('To be implemented')
+    },
+  },
+  { separator: true },
+  {
+    label: t('fs.contextMenu.delete'),
+    command: () => {
+      emit('delete', props.fileName)
+    },
+  },
+  { separator: true },
+  {
+    label: t('fs.contextMenu.delete'),
+    command: () => {
+      emit('delete', props.fileName)
+    },
+  },
+  {
     label: t('fs.contextMenu.rename'),
-    icon: 'pi pi-pencil',
     command: () => {
       emit('rename', props.fileName)
     },
   },
+  { separator: true },
   {
-    label: t('fs.contextMenu.delete'),
-    icon: 'pi pi-trash',
+    label: t('fs.contextMenu.properties'),
     command: () => {
-      emit('delete', props.fileName)
+      window.alert('To be implemented')
     },
   },
 ])

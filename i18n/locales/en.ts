@@ -13,7 +13,13 @@ export default {
     contextMenu: {
       'open': 'Open',
       'rename': 'Rename',
-      'delete': 'Elimina',
+      'delete': 'Delete',
+      'print': 'Print',
+      'sendTo': 'Send To',
+      'cut': 'Cut',
+      'copy': 'Copy',
+      'properties': 'Properties',
+      'createShortcut': 'Create Shortcut',
     }
   },
   apps: {
