@@ -41,6 +41,13 @@ onClickOutside(startButtonElement, () => {
       <template #itemicon="{ item }">
         <img v-if="item.image" :src="item.image" />
         <Icon v-if="item.icon" :name="item.icon" :size="21" />
+
+        <template v-if="item.items">
+          <Icon
+            class="owd-system-bar__start__menu__arrow"
+            name="mdi:menu-right" :size="24"
+          />
+        </template>
       </template>
     </TieredMenu>
   </Button>
@@ -81,7 +88,12 @@ onClickOutside(startButtonElement, () => {
 
   & > ul {
     border-left: 32px solid rgb(var(--owd-elevation-inactive));
-    margin: var(--owd-border-width);
+  }
+
+  .owd-system-bar__start__menu__arrow {
+    position: absolute;
+    margin-top: -3px;
+    right: -8px;
   }
 }
 </style>

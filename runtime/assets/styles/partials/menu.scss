@@ -89,6 +89,18 @@
     animation: none !important;
   }
 
+  ul {
+    margin: var(--owd-border-width);
+
+    li {
+      position: relative;
+    }
+  }
+
+  svg {
+    display: none;
+  }
+
   &-item {
     padding: 8px 16px;
 
@@ -96,10 +108,9 @@
       margin-right: 12px;
     }
 
-    &:hover {
+    &:hover, &-active {
       background: rgb(var(--owd-elevation-active-background));
       color: rgb(var(--owd-elevation-active-color)) !important;
-      box-shadow: var(--p-card-box-shadow);
     }
   }
 
@@ -111,9 +122,11 @@
     color: var(--p-card-color);
     border-color: var(--p-card-border-color);
     box-shadow: var(--owd-border-color);
+    padding: var(--owd-border-width) 0;
 
     .p-tieredmenu-item {
       height: 31px;
+      margin: 0 2px;
       padding: 4px 10px !important;
 
       .iconify {
