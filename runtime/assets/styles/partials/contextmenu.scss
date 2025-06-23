@@ -8,6 +8,8 @@
 }
 
 .p-contextmenu {
+  font-family: var(--owd-font-family);
+  font-size: var(--p-font-size);
   border-width: 2px;
 
   &-item-content {
@@ -15,5 +17,15 @@
       background: rgb(var(--owd-elevation-active-background)) !important;
       color: rgb(var(--owd-elevation-active-color)) !important;
     }
+  }
+
+  &-separator {
+    margin: 2px;
+    height: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(var(--owd-theme-color-dark)) rgb(var(--owd-theme-color-white)) rgb(var(--owd-theme-color-white))
+    rgb(var(--owd-theme-color-dark));
+    background: rgb(var(--owd-theme-color-dark));
   }
 }
