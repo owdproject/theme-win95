@@ -26,7 +26,16 @@ props.window.fsExplorer.initialize()
 <template>
   <Window v-bind="$props">
     <div class="flex flex-col h-full">
-      <Menubar breakpoint="false" :model="window.menu" />
+      <div class="flex flex-row items-center">
+        <div class="flex-1 overflow-hidden">
+          <Menubar breakpoint="false" :model="window.menu" />
+        </div>
+        <Divider layout="vertical" />
+
+        <div class="bg-black flex items-center text-center" style="height: 26px;">
+          <img class="mx-1" style="height: 22px;" src="data:image/gif;base64,R0lGODlhTAAsAIQQAAAAAAAAMAgICBAQEB8fHyAgIAAwMCgoKAAwZwAwmABnmDBnZzBnmDBnzzCYzzCY/7KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysiH5BAEKABAALAAAAABMACwAAAX+ICCOZGmeaKqubOu+cCzPqCAEQVHQfH/aOJ1vOCMQFIpGg8FAOBE2onRlRCqZT6hgSjQ6F4tEgvl4IKMAmxfBHa7BYrJZgVYTnO2ZwaAs+/9+Snglg3kwe32AioJshI2GLUh/TJKKgExohZArlWWUCpaXDJmPmyhyDg5ZqaGKSDqapiaoqk+srX+vBbGyIntlSjYHB5NNCHKhSAMDvSa/D8ECw8VOyJbKzM0kVwy+Bn9CJdZ/Stom3N7gO+IMoeXmIstIIjh/qTh7ezidlkbw8groBbDnAF++faBa+YM3wsYtXBD98NLm0EHEiw8mNuOHEZfGXhw7hvq4qZ6lVHu3nAxzkq9lvmEL4ZlUhNKAygMsXbaESYAhgHGA0JAYxo2JEmw+gf4ROoLoEiYMjipYBu8ZLiVUAVg96cDnVncNsn4FlCppuwcPW6UNhcNsmbVcI7ZlqORegEQi/+xhqq1uwbsN8gLau4Vhqnc2kMANZZevucMNRCRWsJgrDsfaKu2RLMAJN7/cNvs8odkAZ89PQT8VPbqEjkRQjWXF3PrE68APYjuZXbj2CyNZfbshEFy48ePIR4QAADs=" />
+        </div>
+      </div>
 
       <Divider />
 
@@ -72,11 +81,10 @@ props.window.fsExplorer.initialize()
               @openFile="fsExplorer.openFile"
             />
           </SelectableArea>
-          <!--
           <iframe
+            v-else
             :src="window.meta.path"
           />
-          -->
 
         </DataTable>
       </div>
