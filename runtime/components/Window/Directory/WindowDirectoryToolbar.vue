@@ -112,7 +112,7 @@ defineEmits(['back', 'forward', 'up', 'cut', 'copy', 'paste', 'undo', 'delete', 
   vertical-align: top;
   min-width: 50px;
   height: 50px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   filter: grayscale(1);
 
   &-image {

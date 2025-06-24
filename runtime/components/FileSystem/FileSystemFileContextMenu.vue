@@ -6,10 +6,10 @@ const { t } = useI18n()
 
 const props = defineProps<{
   fileName: string
-  basePath: string
+  window: IWindowController
 }>()
 
-const emit = defineEmits(['open', 'delete', 'rename'])
+const emit = defineEmits(['open', 'rename'])
 
 const menu = ref<Menu | null>(null)
 const items = ref<MenuItem[]>([
@@ -29,27 +29,29 @@ const items = ref<MenuItem[]>([
   {
     label: t('fs.contextMenu.cut'),
     command: () => {
-      window.alert('To be implemented')
+      props.window.fsExplorer.selectFiles([
+        props.fileName,
+      ])
+      props.window.fsExplorer.cutSelectedFiles()
     },
   },
   {
     label: t('fs.contextMenu.copy'),
     command: () => {
-      window.alert('To be implemented')
+      props.window.fsExplorer.selectFiles([
+        props.fileName,
+      ])
+      props.window.fsExplorer.copySelectedFiles()
     },
   },
   { separator: true },
   {
     label: t('fs.contextMenu.delete'),
     command: () => {
-      emit('delete', props.fileName)
-    },
-  },
-  { separator: true },
-  {
-    label: t('fs.contextMenu.delete'),
-    command: () => {
-      emit('delete', props.fileName)
+      props.window.fsExplorer.selectFiles([
+        `${props.window.fsExplorer.basePath.value}/${props.fileName}`,
+      ])
+      props.window.fsExplorer.fsController.deleteSelectedFiles()
     },
   },
   {

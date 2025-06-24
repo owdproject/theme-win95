@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { fs } from '@zenfs/core'
 import { ref, onMounted } from 'vue'
-import { isImageFile } from '@owdproject/module-fs/runtime/utils/utilFileSystemImage'
 import FileSystemFileContextMenu from './FileSystemFileContextMenu.vue'
 import FileSystemFileIcon from './FileSystemFileIcon.vue'
 
@@ -11,12 +10,12 @@ const props = defineProps<{
   layout: string
   selected?: boolean
   cutted?: boolean
+  window: IWindowController
 }>()
 
 const emit = defineEmits([
   'openDirectory',
   'openFile',
-  'delete',
   'rename',
 ])
 
@@ -26,7 +25,7 @@ const isDirectory = ref<boolean>(false)
 const isFile = ref<boolean>()
 const fileContent = ref<string | null>(null)
 
-const contextMenuRef = ref() // riferimento al menu interno
+const contextMenuRef = ref()
 
 async function fetchStatsAndContent(currentPath: string) {
   fs.stat(currentPath, (err, stats) => {
@@ -63,9 +62,9 @@ async function fetchStatsAndContent(currentPath: string) {
 
 function onFileOpen() {
   if (isDirectory.value) {
-    emit('openDirectory', props.fileName)
+    props.window.fsExplorer.openDirectory(props.fileName)
   } else {
-    emit('openFile', props.fileName)
+    props.window.fsExplorer.openFile(props.fileName)
   }
 }
 
@@ -139,14 +138,14 @@ const classes = computed(() => {
       <span
         v-if="!isRenaming"
         @dblclick.stop="renameStart"
-        class="text-sm text-gray-800 truncate"
+        class="text-sm truncate"
         v-text="fileName"
       />
 
       <input
         v-else
         v-model="editableName"
-        class="text-sm text-gray-800 truncate border border-gray-300 rounded-sm px-1"
+        class="text-sm truncate border border-gray-300 rounded-sm px-1"
         @blur="renameCommit"
         @keyup.enter="renameCommit"
         @keyup.esc="renameCancel"
@@ -159,10 +158,9 @@ const classes = computed(() => {
     <FileSystemFileContextMenu
       ref="contextMenuRef"
       :file-name="fileName"
-      :base-path="basePath"
+      :window="window"
       @open="onFileOpen"
       @rename="renameStart"
-      @delete="$emit('delete', fileName)"
     />
 
   </div>
@@ -180,6 +178,8 @@ const classes = computed(() => {
     input {
       border: 0;
       text-align: center;
+      background: rgb(var(--owd-elevation-active-background));
+      color: rgb(var(--owd-elevation-active-color)) !important;
     }
   }
 
@@ -195,6 +195,9 @@ const classes = computed(() => {
 
   &--selected {
     .owd-file__name {
+      background: rgb(var(--owd-elevation-active-background));
+      color: rgb(var(--owd-elevation-active-color)) !important;
+
       &:after {
         position: absolute;
         top: 0;
@@ -202,7 +205,7 @@ const classes = computed(() => {
         right: 0;
         bottom: 0;
         content: '';
-        border: 1px dotted black;
+        border: 1px dotted rgb(var(--owd-theme-color-white));
       }
     }
   }

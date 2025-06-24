@@ -2,11 +2,11 @@
   --p-menu-background: var(--p-surface-900);
   --p-menubar-submenu-background: var(--p-menu-background);
   --p-menu-shadow: var(--owd-border-color);
-  --p-menu-item-padding: 8px 8px;
+  --p-menu-item-padding: 6px 8px;
   --p-menu-submenu-label-padding: 4px 8px;
   --p-menu-submenu-label-font-weight: 600;
 
-  --p-menubar-item-padding: 8px 8px;
+  --p-menubar-item-padding: 6px 8px;
   --p-menubar-base-item-padding: 6px 12px;
 }
 
@@ -37,7 +37,7 @@
     }
 
     &-separator {
-      margin: 2px -2px;
+      margin: 4px -2px;
       height: 2px;
       border-width: 1px;
       border-style: solid;

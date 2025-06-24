@@ -77,8 +77,7 @@ props.window.fsExplorer.initialize()
               :layout="fsExplorer.layout.value"
               :selected="fsExplorer.selectedFiles.value.includes(`${fsExplorer.basePath.value}/${fileName}`)"
               :cutted="fsExplorer.fsClipboard.clipboardFiles.value.includes(`${fsExplorer.basePath.value}/${fileName}`) && fsExplorer.fsClipboard.clipboardType.value === 'cut'"
-              @openDirectory="window.fsExplorer.openDirectory"
-              @openFile="fsExplorer.openFile"
+              :window="window"
             />
           </SelectableArea>
           <iframe

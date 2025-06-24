@@ -20,10 +20,10 @@
 
 :root {
   --owd-font-family: ms-sans-serif, 'sans-serif';
-  --p-font-size: 14px;
+  --p-font-size: 0.9rem;
 
   --owd-windov-nav-height: 26px;
-  --owd-system-bar-height: 40px;
+  --owd-system-bar-height: 38px;
 
   --owd-border-color:
     rgb(var(--owd-theme-color-white)) var(--owd-border-width)
@@ -87,4 +87,18 @@
     inset -2px 0 0 0 rgb(var(--owd-theme-color-grey)),
     inset 0 -2px 0 0 rgb(var(--owd-theme-color-grey)),
     inset 2px 0 0 0 rgb(var(--owd-theme-color-black));
+}
+
+::selection {
+  background: rgb(var(--owd-elevation-active-background));
+  color: rgb(var(--owd-elevation-active-color));
+}
+
+.owd-desktop {
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+
+.text-sm {
+  padding: 2px;
 }

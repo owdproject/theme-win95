@@ -21,6 +21,7 @@ watch(() => props.address, (address) => {
       <div class="flex-col w-full">
         <InputText
           v-model="addressInput" style="width: inherit"
+          spellcheck="false"
           @keydown.enter="$emit('update:modelValue', addressInput)"
         />
       </div>
